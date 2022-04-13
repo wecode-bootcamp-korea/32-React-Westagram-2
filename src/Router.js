@@ -9,35 +9,35 @@ import LeeSooLogin from './pages/LeeSoo/Login/LeeSooLogin';
 import LeeSooMain from './pages/LeeSoo/Main/LeeSooMain';
 
 // 덕우's 컴포넌트
-import DeokwooLogin from './pages/Deokwoo/Login/DeokwooLogin';
-import DeokwooMain from './pages/Deokwoo/Main/DeokwooMain';
+import DeokWooLogin from './pages/DeokWoo/Login/DeokWooLogin';
+import DeokWooMain from './pages/DeokWoo/Main/DeokWooMain';
 
 // 대영's 컴포넌트
-import DaeyoungLogin from './pages/Daeyoung/Login/DaeyoungLogin';
-import DaeyoungMain from './pages/Daeyoung/Main/DaeyoungMain';
+import DaeYoungLogin from './pages/DaeYoung/Login/DaeYoungLogin';
+import DaeYoungMain from './pages/DaeYoung/Main/DaeYoungMain';
 
 // 현정's 컴포넌트
-import HyunjungLogin from './pages/Hyunjung/Login/HyunjungLogin';
-import HyunjungMain from './pages/Hyunjung/Main/HyunjungMain';
+import HyunJungLogin from './pages/HyunJung/Login/HyunJungLogin';
+import HyunJungMain from './pages/HyunJung/Main/HyunJungMain';
 
 const Router = props => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/hyunjunglogin" element={<HyunjungLogin />} />
-        <Route path="/hyunjungmain" element={<HyunjungMain />} />
+        <Route path="/hyunjung-login" element={<HyunJungLogin />} />
+        <Route path="/hyunjung-main" element={<HyunJungMain />} />
 
-        <Route path="/daeyounglogin" element={<DaeyoungLogin />} />
-        <Route path="/daeyoungloginmain" element={<DaeyoungMain />} />
+        <Route path="/daeyoung-login" element={<DaeYoungLogin />} />
+        <Route path="/daeyoung-main" element={<DaeYoungMain />} />
 
-        <Route path="/leejisoologin" element={<LeeJiSooLogin />} />
-        <Route path="/leejisoomain" element={<LeeJiSooMain />} />
+        <Route path="/leejisoo-login" element={<LeeJiSooLogin />} />
+        <Route path="/leejisoo-main" element={<LeeJiSooMain />} />
 
-        <Route path="/leeSoologin" element={<LeeSooLogin />} />
-        <Route path="/leeSoomain" element={<LeeSooMain />} />
+        <Route path="/leeSoo-login" element={<LeeSooLogin />} />
+        <Route path="/leeSoo-main" element={<LeeSooMain />} />
 
-        <Route path="/deokwoologin" element={<DeokwooLogin />} />
-        <Route path="/deokwoomain" element={<DeokwooMain />} />
+        <Route path="/deokwoologin" element={<DeokWooLogin />} />
+        <Route path="/deokwoomain" element={<DeokWooMain />} />
       </Routes>
     </BrowserRouter>
   );

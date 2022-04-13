@@ -1,7 +1,7 @@
 import React from 'react';
 
-const DaeyoungLogin = props => {
+const DaeYoungLogin = props => {
   return <div>Login</div>;
 };
 
-export default DaeyoungLogin;
+export default DaeYoungLogin;

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const DaeyoungMain = props => {
+const DaeYoungMain = props => {
   return <div>Main</div>;
 };
 
-export default DaeyoungMain;
+export default DaeYoungMain;

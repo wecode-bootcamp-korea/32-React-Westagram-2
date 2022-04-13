@@ -1,7 +1,7 @@
 import React from 'react';
 
-const HyunjungLogin = props => {
+const HyunJungLogin = props => {
   return <header>headers</header>;
 };
 
-export default HyunjungLogin;
+export default HyunJungLogin;

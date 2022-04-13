@@ -1,7 +1,7 @@
 import React from 'react';
 
-const DaeyoungAside = props => {
+const DaeYoungAside = props => {
   return <header>headers</header>;
 };
 
-export default DaeyoungAside;
+export default DaeYoungAside;

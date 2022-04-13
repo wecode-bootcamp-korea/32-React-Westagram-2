@@ -1,7 +1,7 @@
 import React from 'react';
 
-const DeokwooLogin = props => {
+const DeokWooLogin = props => {
   return <div>Login</div>;
 };
 
-export default DeokwooLogin;
+export default DeokWooLogin;
