@@ -36,8 +36,8 @@ const Router = props => {
         <Route path="/leeSoo-login" element={<LeeSooLogin />} />
         <Route path="/leeSoo-main" element={<LeeSooMain />} />
 
-        <Route path="/deokwoologin" element={<DeokWooLogin />} />
-        <Route path="/deokwoomain" element={<DeokWooMain />} />
+        <Route path="/deokwoo-login" element={<DeokWooLogin />} />
+        <Route path="/deokwoo-main" element={<DeokWooMain />} />
       </Routes>
     </BrowserRouter>
   );
