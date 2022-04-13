@@ -1,7 +1,7 @@
 import React from 'react';
 
-const DeokwooMain = props => {
+const DeokWooMain = props => {
   return <div>Main</div>;
 };
 
-export default DeokwooMain;
+export default DeokWooMain;
