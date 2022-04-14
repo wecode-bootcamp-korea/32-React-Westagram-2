@@ -12,7 +12,7 @@ const Nav = props => {
                 alt="westagram-logo"
                 src="./images/instagram.png"
                 className="nav-img"
-              />
+              />{' '}
               | westagram
             </h1>
           </div>
