@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './LeeSooMain.scss';
-
+import {} from 'react-router-dom';
 const LeeSooMain = props => {
+  let [CommentsNick, CommentsNickChange] = useState(['Mc.donaldo']);
+  let [CommentsTxt, CommentsTxtChange] = useState(['내일은 디즈니 출근해야지']);
+  let [Likes, LikesChange] = useState(0);
+  let [CommentsDel, CommentsDelChange] = useState(false);
+
   return (
     <div className="wrapper">
       <nav>
         <div className="nav-left">
-          <a href="main.html">
+          <a href="http://localhost:3000/LeeSoo-Login">
             <img alt="인스타 로고" src="/images/LeeSoo/insta.png" />
           </a>
           <span className="logo">Westagram</span>
