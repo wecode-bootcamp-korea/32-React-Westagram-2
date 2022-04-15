@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import "./Main.scss";
-import Nav from "../../components/Nav/Nav";
+import React, { useState } from 'react';
+import './HyunjungMain.scss';
+import Nav from '../../../components/Nav/Nav';
 
-const HyunJungMain = (props) => {
- 
+const HyunJungMain = props => {
   return (
     <>
       <Nav />
@@ -14,7 +13,7 @@ const HyunJungMain = (props) => {
               <div className="header-id">
                 <img
                   alt="profile-img"
-                  src="images/main.png"
+                  src="/images/Hyunjung/main.png"
                   className="id-img"
                 />
                 <div className="id">happyDay01</div>
@@ -24,7 +23,7 @@ const HyunJungMain = (props) => {
               </div>
             </div>
             <div className="feeds-pic">
-              <img alt="main-pic" src="images/mainpage.jpg" />
+              <img alt="main-pic" src="/images/Hyunjung/mainpage.jpg" />
             </div>
             <section className="feeds-icon">
               <div className="feeds-icon-left">
@@ -55,20 +54,20 @@ const HyunJungMain = (props) => {
               </div>
               <div>
                 <ul className="feeds-comment">
-                      <li className="comment">
-                        <div className="comment-left">
-                          <span className="comment-id">smileDay01</span>
-                          <span className="comment-content">행복한 하루!</span>
-                        </div>
-                        <div className="comment-right">
-                          <button className="comment-like">
-                            <i className="fa-icon fa-regular fa-heart"></i>
-                          </button>
-                          <button className="comment-delete">
-                            <i className="fa-solid fa-trash-can"></i>
-                          </button>
-                        </div>
-                      </li> 
+                  <li className="comment">
+                    <div className="comment-left">
+                      <span className="comment-id">smileDay01</span>
+                      <span className="comment-content">행복한 하루!</span>
+                    </div>
+                    <div className="comment-right">
+                      <button className="comment-like">
+                        <i className="fa-icon fa-regular fa-heart"></i>
+                      </button>
+                      <button className="comment-delete">
+                        <i className="fa-solid fa-trash-can"></i>
+                      </button>
+                    </div>
+                  </li>
                 </ul>
                 <div className="comment-time">55분 전</div>
                 {/* 인풋창 */}
@@ -80,9 +79,7 @@ const HyunJungMain = (props) => {
                     />
                   </div>
                   <div className="comment-button">
-                    <button className="comment-btn">
-                      게시
-                    </button>
+                    <button className="comment-btn">게시</button>
                   </div>
                 </div>
               </div>
@@ -95,7 +92,7 @@ const HyunJungMain = (props) => {
               <div className="aside-header">
                 <img
                   alt="aside-profile-pic"
-                  src="images/main.png"
+                  src="/images/Hyunjung/main.png"
                   className="header-aside-img"
                 />
                 <div className="aside-id">
@@ -112,7 +109,7 @@ const HyunJungMain = (props) => {
                   <div className="aside-header">
                     <img
                       alt="story-user-pic01"
-                      src="images/pro01.png"
+                      src="/images/Hyunjung/pro01.png"
                       className="aside-img"
                     />
                     <div className="aside-id">
@@ -123,7 +120,7 @@ const HyunJungMain = (props) => {
                   <div className="aside-header">
                     <img
                       alt="story-user-pic02"
-                      src="images/pro02.png"
+                      src="/images/Hyunjung/pro02.png"
                       className="aside-img"
                     />
                     <div className="aside-id">
@@ -134,7 +131,7 @@ const HyunJungMain = (props) => {
                   <div className="aside-header">
                     <img
                       alt="story-user-pic03"
-                      src="images/pro03.png"
+                      src="/images/Hyunjung/pro03.png"
                       className="aside-img"
                     />
                     <div className="aside-id">
@@ -152,7 +149,7 @@ const HyunJungMain = (props) => {
                     <div className="member-header">
                       <img
                         alt="recommend-user-pic01"
-                        src="images/pro04.png"
+                        src="/images/Hyunjung/pro04.png"
                         className="aside-img"
                       />
                       <div className="aside-id">
@@ -168,7 +165,7 @@ const HyunJungMain = (props) => {
                     <div className="member-header">
                       <img
                         alt="recommend-user-pic02"
-                        src="images/pro05.png"
+                        src="/images/Hyunjung/pro05.png"
                         className="aside-img"
                       />
                       <div className="aside-id">
@@ -184,7 +181,7 @@ const HyunJungMain = (props) => {
                     <div className="member-header">
                       <img
                         alt="recommend-user-pic03"
-                        src="images/pro06.png"
+                        src="/images/Hyunjung/pro06.png"
                         className="aside-img"
                       />
                       <div className="aside-id">
@@ -215,4 +212,3 @@ const HyunJungMain = (props) => {
 };
 
 export default HyunJungMain;
-

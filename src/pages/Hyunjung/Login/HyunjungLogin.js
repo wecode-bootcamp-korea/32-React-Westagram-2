@@ -1,23 +1,21 @@
-import React, { useState } from "react";
-import "./Login.scss";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import './HyunjungLogin.scss';
+import { useNavigate } from 'react-router-dom';
 
 const HyunJungLogin = () => {
   const navigate = useNavigate();
-  const [userId, setUserId] = useState("");
-  const [userPw, setUserPw] = useState("");
-  
+  const [userId, setUserId] = useState('');
+  const [userPw, setUserPw] = useState('');
 
-  const handlerIdInput = (event) => {
+  const handlerIdInput = event => {
     setUserId(event.target.value);
   };
-  const handlerPwInput = (event) => {
+  const handlerPwInput = event => {
     setUserPw(event.target.value);
   };
 
-
   const goToMain = () => {
-    navigate("/main");
+    navigate('/hyunjung-main');
   };
   return (
     <main className="login-main">
@@ -32,7 +30,6 @@ const HyunJungLogin = () => {
               className="input-id"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onKeyUp={isPassLogin}
             />
           </div>
           <div className="form-pw">
@@ -41,7 +38,6 @@ const HyunJungLogin = () => {
               className="input-pw"
               type="password"
               placeholder="비밀번호"
-              onKeyUp={isPassLogin}
             />
           </div>
           <div className="form-button">
