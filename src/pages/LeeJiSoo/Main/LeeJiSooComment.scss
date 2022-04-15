@@ -1,0 +1,61 @@
+section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.comment > ul > li {
+  display: flex;
+  flex-direction: row;
+}
+
+.commentCon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 13px;
+}
+
+button {
+  border: none;
+  color: rgba(0, 0, 0, 0.54);
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.commentBtnContainer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: transparent;
+}
+
+.commentandBtn {
+  display: flex;
+}
+
+.writing {
+  display: flex;
+  flex-direction: row;
+  border: 1px 0px 1px 0px var(--line-color) solid;
+}
+
+.writing > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+}
+
+.writing > input {
+  border-radius: 0px;
+  width: 100%;
+  height: 43px;
+  background-color: transparent;
+}
+
+button {
+  width: 50px;
+  border: none;
+  color: rgba(0, 0, 0, 0.54);
+  background-color: #ffffff;
+}
