@@ -1,7 +1,9 @@
-import React from 'react';
+/*eslint-disable */
+import React, { useState } from 'react';
+import './LeeSooMain.scss';
 
 const LeeSooMain = props => {
-  return <div>Main</div>;
+  return <p>Main</p>;
 };
 
 export default LeeSooMain;
