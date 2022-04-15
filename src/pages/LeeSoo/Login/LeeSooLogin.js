@@ -9,6 +9,13 @@ const LeeSooLogin = props => {
   let [LoginId, LoginIdChange] = useState('');
   let [LoginPw, LoginPwChange] = useState('');
 
+  function LoginCheck(id, pw) {
+    if (id.includes('@') && pw.length >= 5) {
+      return false;
+    }
+    return true;
+  }
+
   const navigate = useNavigate();
   const goMain = () => {
     navigate('/LeeSoo-Main');
@@ -43,7 +50,11 @@ const LeeSooLogin = props => {
           {LoginPw}
           <br />
           <br />
-          <button type="submit" onClick={goMain}>
+          <button
+            type="submit"
+            onClick={goMain}
+            disabled={LoginCheck(LoginId, LoginPw)}
+          >
             로그인
           </button>
           <br />
