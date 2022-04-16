@@ -1,3 +1,7 @@
+body {
+  background-color: #f8f4f4;
+}
+
 .wrapper {
   height: auto;
   margin-top: 60px;
@@ -27,9 +31,10 @@
 
       article {
         max-width: 614px;
-        height: 100%;
+        height: auto;
         margin-bottom: 50px;
         border: 1px solid rgba(45, 42, 42, 0.3);
+        background-color: white;
 
         .article-top {
           display: flex;
@@ -57,11 +62,12 @@
 
         .article-main {
           max-width: 612px;
-          max-height: 612px;
+          max-height: auto;
 
           img {
             width: 100%;
-            max-height: 612px;
+            height: 612px;
+            object-fit: cover;
           }
         }
 
@@ -118,10 +124,12 @@
           }
         }
       }
+
       .Comments-list {
         margin-top: 5px;
         position: relative;
         padding: 5px 50px;
+        background-color: white;
 
         .nick {
           font-weight: bold;
@@ -141,8 +149,10 @@
 
       .Comments-write {
         border-top: 1px solid #c2c2c2;
+        margin-top: 10px;
         display: flex;
         padding: 10px;
+        background-color: white;
 
         .input-area {
           border: none;
@@ -226,6 +236,7 @@
           border: 1px solid #c6c6c6;
           max-height: 250px;
           overflow: auto;
+          background-color: white;
 
           img {
             width: 45px;

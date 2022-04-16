@@ -2,11 +2,18 @@
 import React, { useState } from 'react';
 import './LeeSooMain.scss';
 import Nav from '../../../components/Nav/Nav';
+import Comments from './Comments.js';
 
 const LeeSooMain = props => {
-  let [UserNames, UserNamesChange] = useState(['hotguy_goophy']);
-  let [UserComments, UserCommentsChange] = useState(['내일 디즈니 출근해야제']);
-  let [Likes, LikesChange] = useState(false);
+  let [UserNames, UserNamesChange] = useState([
+    'hotguy_goophy',
+    'HyeonSooHeisGod',
+  ]);
+  let [UserComments, UserCommentsChange] = useState([
+    '내일 디즈니 출근해야제 😬',
+    '재밌는 자세네요? 👓👓👓',
+  ]);
+  let [Likes, LikesChange] = useState([false]);
 
   let [inputValues, inputValuesChange] = useState('');
 
@@ -82,20 +89,11 @@ const LeeSooMain = props => {
             </div>
 
             {/* 여기에 댓글 기능 구현하기 */}
-            {UserNames.map((a, i) => {
-              return (
-                <div className="Comments-list">
-                  <span className="nick">{a} </span>
-                  <span className="text">{UserComments[i]}</span>
-                  <span className="like">
-                    <i class="fa-solid fa-heart"></i>
-                  </span>
-                  <span className="delete">
-                    <i class="fa-solid fa-x"></i>
-                  </span>
-                </div>
-              );
-            })}
+            <Comments
+              userNames={UserNames}
+              userComments={UserComments}
+              likes={Likes}
+            />
 
             {/* 여기에 댓글 입력창 구현하기 */}
             <div className="Comments-write" onKeyDown={EnterCatch}>
