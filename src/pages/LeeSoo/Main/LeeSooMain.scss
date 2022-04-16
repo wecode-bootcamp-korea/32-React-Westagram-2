@@ -1,5 +1,7 @@
 .wrapper {
   height: auto;
+  margin-top: 60px;
+  padding-top: 60px;
   margin: 0 auto;
 
   b {
@@ -10,69 +12,11 @@
     color: transparent;
   }
 
-  nav {
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid rgba(48, 46, 46, 0.3);
-    padding: 20px;
-    background-color: white;
-
-    .logo {
-      padding-left: 1rem;
-      font-size: 30px;
-      font-family: 'Lobster', cursive;
-    }
-
-    .nav-left img {
-      width: 40px;
-      padding-right: 1rem;
-      border-right: 1px solid black;
-    }
-
-    .nav-right img {
-      width: 25px;
-      margin-left: 20px;
-      margin-top: 6px;
-    }
-
-    .nav-center {
-      position: relative;
-
-      input {
-        max-width: 200px;
-        width: 100%;
-        margin-top: 7px;
-        padding: 3px;
-        border: 1px solid rgba(48, 46, 46, 0.3);
-        text-align: center;
-        background-color: #efefef;
-        color: RGB(161, 161, 161);
-      }
-
-      input::placeholder {
-        color: gray;
-      }
-
-      .searchIcon {
-        position: absolute;
-        top: 35%;
-        transform: translateY(-20%);
-        left: 10%;
-        transform: translateX(-10%);
-        color: gray;
-      }
-
-      .searchBar input:focus {
-        outline: none;
-      }
-    }
-  }
-
   main {
     display: flex;
     justify-content: center;
     height: auto;
-    background-color: #fafafa;
+    background-color: #f8f4f4;
 
     .contents {
       max-width: 700px;
@@ -82,7 +26,6 @@
       padding: 30px 10px;
 
       article {
-        position: relative;
         max-width: 614px;
         height: 100%;
         margin-bottom: 50px;
@@ -119,7 +62,6 @@
           img {
             width: 100%;
             max-height: 612px;
-            height: 100%;
           }
         }
 
