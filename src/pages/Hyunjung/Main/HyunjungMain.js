@@ -3,6 +3,21 @@ import './HyunjungMain.scss';
 import Nav from '../../../components/Nav/Nav';
 
 const HyunJungMain = props => {
+  const [commentList, setCommentList] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+
+  const onInputChange = e => {
+    setInputValue(e.target.value);
+  };
+
+  const onButtonClick = e => {
+    e.preventDefault();
+    if (inputValue === '') {
+      return;
+    }
+    setCommentList(commentList => [...commentList, inputValue]);
+    setInputValue('');
+  };
   return (
     <>
       <Nav />
@@ -19,7 +34,7 @@ const HyunJungMain = props => {
                 <div className="id">happyDay01</div>
               </div>
               <div className="header-dot">
-                <i className="fa-solid fa-ellipsis"></i>
+                <i className="fa-solid fa-ellipsis" />
               </div>
             </div>
             <div className="feeds-pic">
@@ -28,18 +43,18 @@ const HyunJungMain = props => {
             <section className="feeds-icon">
               <div className="feeds-icon-left">
                 <span className="feeds-icon-heart">
-                  <i className="fa-icon fa-regular fa-heart"></i>
+                  <i className="fa-icon fa-regular fa-heart" />
                 </span>
                 <span className="feeds-icon-comment">
-                  <i className="fa-icon fa-regular fa-comment"></i>
+                  <i className="fa-icon fa-regular fa-comment" />
                 </span>
                 <span className="feeds-icon-plane">
-                  <i className="fa-icon fa-regular fa-paper-plane"></i>
+                  <i className="fa-icon fa-regular fa-paper-plane" />
                 </span>
               </div>
               <div className="feeds-icon-right">
                 <span className="feeds-icon-bookmark">
-                  <i className="fa-icon fa-regular fa-bookmark"></i>
+                  <i className="fa-icon fa-regular fa-bookmark" />
                 </span>
               </div>
             </section>
@@ -54,34 +69,40 @@ const HyunJungMain = props => {
               </div>
               <div>
                 <ul className="feeds-comment">
-                  <li className="comment">
-                    <div className="comment-left">
-                      <span className="comment-id">smileDay01</span>
-                      <span className="comment-content">행복한 하루!</span>
-                    </div>
-                    <div className="comment-right">
-                      <button className="comment-like">
-                        <i className="fa-icon fa-regular fa-heart"></i>
-                      </button>
-                      <button className="comment-delete">
-                        <i className="fa-solid fa-trash-can"></i>
-                      </button>
-                    </div>
-                  </li>
+                  {commentList.map((comment, index) => {
+                    return (
+                      <li className="comment" key={index}>
+                        <div className="comment-left">
+                          <span className="comment-id">smileDay01</span>
+                          <span className="comment-content">{comment}</span>
+                        </div>
+                        <div className="comment-right">
+                          <button className="comment-like">
+                            <i className="fa-icon fa-regular fa-heart" />
+                          </button>
+                          <button className="comment-delete">
+                            <i className="fa-solid fa-trash-can" />
+                          </button>
+                        </div>
+                      </li>
+                    );
+                  })}
                 </ul>
                 <div className="comment-time">55분 전</div>
                 {/* 인풋창 */}
-                <div className="feeds-comment-input">
+                <form className="feeds-comment-input" onSubmit={onButtonClick}>
                   <div className="comment-input">
                     <input
                       className="comment-text"
                       placeholder="댓글 쓰기..."
+                      onChange={onInputChange}
+                      value={inputValue}
                     />
                   </div>
                   <div className="comment-button">
                     <button className="comment-btn">게시</button>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>
