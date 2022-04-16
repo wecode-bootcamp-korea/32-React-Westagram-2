@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './HyunjungMain.scss';
 import Nav from '../../../components/Nav/Nav';
+import Comment from './Comment/HyunjungComment';
 
 const HyunJungMain = props => {
   const [commentList, setCommentList] = useState([]);
@@ -69,24 +70,7 @@ const HyunJungMain = props => {
               </div>
               <div>
                 <ul className="feeds-comment">
-                  {commentList.map((comment, index) => {
-                    return (
-                      <li className="comment" key={index}>
-                        <div className="comment-left">
-                          <span className="comment-id">smileDay01</span>
-                          <span className="comment-content">{comment}</span>
-                        </div>
-                        <div className="comment-right">
-                          <button className="comment-like">
-                            <i className="fa-icon fa-regular fa-heart" />
-                          </button>
-                          <button className="comment-delete">
-                            <i className="fa-solid fa-trash-can" />
-                          </button>
-                        </div>
-                      </li>
-                    );
-                  })}
+                  <Comment commentList={commentList} />
                 </ul>
                 <div className="comment-time">55분 전</div>
                 {/* 인풋창 */}
