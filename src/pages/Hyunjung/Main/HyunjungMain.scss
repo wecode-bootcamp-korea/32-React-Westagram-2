@@ -67,7 +67,9 @@
   background-color: #fafafa;
   // position: relative;
 
-  section {
+  .left {
+    padding-bottom: 100px;
+
     .feeds {
       width: 100%;
       border: 1px solid #cacaca;
@@ -170,7 +172,8 @@
           }
           .feeds-comment-input {
             display: flex;
-            padding-top: 10px;
+            // padding-top: 10px;
+            padding: 10px;
             border-top: 1px solid #cacaca;
             .comment-input {
               width: 90%;

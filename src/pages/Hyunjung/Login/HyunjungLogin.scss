@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 .login-main {
   position: relative;
@@ -20,7 +20,7 @@
     .logo {
       .login-logo {
         padding-bottom: 20px;
-        font-family: "Lobster", cursive;
+        font-family: 'Lobster', cursive;
         font-size: 2.5em;
       }
     }
@@ -38,7 +38,7 @@
         }
       }
       .form-button {
-        .form-btn {
+        .active {
           width: 268px;
           height: 30px;
           margin-top: 10px;
@@ -49,7 +49,17 @@
           border-radius: 3px;
           color: #ffffff;
         }
-        
+        .unactive {
+          width: 268px;
+          height: 30px;
+          margin-top: 10px;
+          margin-bottom: 20px;
+          background-color: #a5d4f3;
+          border: 0;
+          outline: 0;
+          border-radius: 3px;
+          color: #ffffff;
+        }
       }
       .form-pw-forget {
         .pw-forget {

@@ -6,12 +6,18 @@ const HyunJungLogin = () => {
   const navigate = useNavigate();
   const [userId, setUserId] = useState('');
   const [userPw, setUserPw] = useState('');
+  const [btnChange, setBtnChange] = useState(true);
 
   const handlerIdInput = event => {
     setUserId(event.target.value);
   };
   const handlerPwInput = event => {
     setUserPw(event.target.value);
+  };
+  const isPassLogin = event => {
+    userId.includes('@') && userPw.length >= 5
+      ? setBtnChange(false)
+      : setBtnChange(true);
   };
 
   const goToMain = () => {
@@ -30,6 +36,7 @@ const HyunJungLogin = () => {
               className="input-id"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
+              onKeyUp={isPassLogin}
             />
           </div>
           <div className="form-pw">
@@ -38,10 +45,15 @@ const HyunJungLogin = () => {
               className="input-pw"
               type="password"
               placeholder="비밀번호"
+              onKeyUp={isPassLogin}
             />
           </div>
           <div className="form-button">
-            <button className="form-btn" onClick={goToMain}>
+            <button
+              className={!btnChange ? 'active' : 'unactive'}
+              onClick={goToMain}
+              disabled={btnChange}
+            >
               로그인
             </button>
           </div>
