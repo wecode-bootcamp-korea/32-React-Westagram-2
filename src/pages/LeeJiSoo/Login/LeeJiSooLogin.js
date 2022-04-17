@@ -1,8 +1,8 @@
 import React from 'react';
 import './LeeJiSooLogin.scss';
-
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+
 const LeeJiSooLogin = () => {
   const [userId, setId] = useState('');
   const [userPw, setPw] = useState('');
@@ -30,7 +30,7 @@ const LeeJiSooLogin = () => {
     }
   };
 
-  const onChange = e => {
+  const handleLogin = e => {
     if (e.target.id === 'id') {
       setId(e.target.value);
     } else if (e.target.id === 'pw') {
@@ -52,7 +52,7 @@ const LeeJiSooLogin = () => {
             <div className="loginDiv">
               {userLogin.map(item => (
                 <input
-                  onChange={onChange}
+                  onChange={handleLogin}
                   id={item.id}
                   type={item.type}
                   placeholder={item.placeholder}
