@@ -8,6 +8,9 @@ import './LeeSooLogin.scss';
 const LeeSooLogin = props => {
   let [LoginId, LoginIdChange] = useState('');
   let [LoginPw, LoginPwChange] = useState('');
+  let [BtnColor, BtnColorChange] = useState('#41699d');
+
+  let BtnLogin = (LoginId.includes('@') && LoginPw.length >= 5) === true;
 
   function LoginCheck(id, pw) {
     if (id.includes('@') && pw.length >= 5) {
@@ -51,6 +54,7 @@ const LeeSooLogin = props => {
           <br />
           <br />
           <button
+            className={BtnLogin ? 'button-active' : ''}
             type="submit"
             onClick={goMain}
             disabled={LoginCheck(LoginId, LoginPw)}

@@ -59,7 +59,7 @@
       cursor: pointer;
     }
 
-    button:enabled:hover {
+    .button-active {
       background-color: #41699d;
       transition: all 0.5s;
     }

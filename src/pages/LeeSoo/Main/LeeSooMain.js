@@ -6,11 +6,11 @@ import Comments from './Comments.js';
 
 const LeeSooMain = props => {
   let [UserNames, UserNamesChange] = useState([
-    'hotguy_goophy',
+    'AnndohyeonHeisKing',
     'HyeonSooHeisGod',
   ]);
   let [UserComments, UserCommentsChange] = useState([
-    '내일 디즈니 출근해야제 😬',
+    '포기하지마요 !!! 😬',
     '재밌는 자세네요? 👓👓👓',
   ]);
   let [Likes, LikesChange] = useState([false]);
@@ -87,14 +87,14 @@ const LeeSooMain = props => {
                 <b>6명이 좋아합니다.</b>
               </p>
             </div>
-
-            {/* 여기에 댓글 기능 구현하기 */}
-            <Comments
-              userNames={UserNames}
-              userComments={UserComments}
-              likes={Likes}
-            />
-
+            <div className="Comments-show">
+              {/* 여기에 댓글 기능 구현하기 */}
+              <Comments
+                userNames={UserNames}
+                userComments={UserComments}
+                likes={Likes}
+              />
+            </div>
             {/* 여기에 댓글 입력창 구현하기 */}
             <div className="Comments-write" onKeyDown={EnterCatch}>
               <input
