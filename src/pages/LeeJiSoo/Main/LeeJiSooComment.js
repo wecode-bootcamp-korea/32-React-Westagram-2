@@ -1,45 +1,28 @@
 import './LeeJiSooComment.scss';
-import {
-  faTrashCan,
-  faHeart,
-  faLaughWink,
-} from '@fortawesome/free-regular-svg-icons';
+import { faLaughWink } from '@fortawesome/free-regular-svg-icons';
+
+import NewComment from './LeeJiSooNewComment';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRef, useState } from 'react';
 
-const NewComment = ({ nickName, finalcomment, id }) => {
-  const handleLike = e => {};
-  return (
-    <li id={id} className="indiComment">
-      <div className="commentandBtn">
-        {' '}
-        <div className="commentCon">
-          <p className="commentName">{nickName}</p>
-          <p className="speak">{finalcomment}</p>
-        </div>
-        <div className="commentBtnContainer">
-          <button onClick={handleLike} className="commentBtn" id="likebtn">
-            <FontAwesomeIcon icon={faHeart} />
-          </button>
-          <button className="commentBtn" id="delete">
-            <FontAwesomeIcon icon={faTrashCan} />
-          </button>
-        </div>
-      </div>
-    </li>
-  );
-};
-
 const LeeJiSooComment = () => {
   const [editing, setEditing] = useState('');
-  const [comment, setComment] = useState([]);
+  const [comment, setComment] = useState([
+    {
+      id: 1,
+      userName: 'undifined',
+      said: '예시문',
+      like: false,
+    },
+  ]);
   const commentInputRef = useRef();
-  const randomId = new Date();
+  const randomId = new Date().getUTCMilliseconds();
 
   const onChange = e => {
     setEditing(e.target.value);
   };
+
   const addComment = text => {
     const newUser = {
       id: randomId,
@@ -56,18 +39,22 @@ const LeeJiSooComment = () => {
       setEditing('');
     }
   };
-
+  const handleDelete = item => {
+    const filterdItem = comment.filter(items => items.id !== item.id);
+    setComment(filterdItem);
+  };
+  const handleCommentBtn = () => {
+    if (editing) {
+      addComment(editing);
+      setEditing('');
+    }
+  };
   return (
-    <section>
+    <section className="commentSection">
       <div className="comment">
         <ul>
-          <NewComment nickName={'pompom'} finalcomment={'말랑말랑'} />
           {comment.map(item => (
-            <NewComment
-              id={item.id}
-              nickName={item.userName}
-              finalcomment={item.said}
-            />
+            <NewComment delteComment={handleDelete} item={item} key={item.id} />
           ))}
         </ul>
       </div>
@@ -84,7 +71,9 @@ const LeeJiSooComment = () => {
           placeholder="댓글 달기..."
           value={editing}
         />
-        <button class="submitBtn">게시</button>
+        <button onClick={handleCommentBtn} className="submitBtn">
+          게시
+        </button>
       </div>
     </section>
   );
