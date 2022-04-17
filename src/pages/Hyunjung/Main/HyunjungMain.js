@@ -4,19 +4,29 @@ import Nav from '../../../components/Nav/Nav';
 import Comment from './Comment/HyunjungComment';
 
 const HyunJungMain = props => {
-  const [commentList, setCommentList] = useState([]);
+  // const [commentList, setCommentList] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const [commentArr, setCommentArr] = useState([]);
 
   const onInputChange = e => {
     setInputValue(e.target.value);
   };
 
-  const onButtonClick = e => {
+  const onFormSubmit = e => {
     e.preventDefault();
-    if (inputValue === '') {
-      return;
+    // if (inputValue === '') {
+    //   return;
+    // }
+    // setCommentList(commentList => [...commentList, inputValue]);
+    const commentNewArr = [...commentArr];
+    if (inputValue !== '') {
+      commentNewArr.push({
+        id: Date.now(),
+        userId: 'smileDay01',
+        comment: inputValue,
+      });
+      setCommentArr(commentNewArr);
     }
-    setCommentList(commentList => [...commentList, inputValue]);
     setInputValue('');
   };
   return (
@@ -70,11 +80,11 @@ const HyunJungMain = props => {
               </div>
               <div>
                 <ul className="feeds-comment">
-                  <Comment commentList={commentList} />
+                  <Comment commentArr={commentArr} />
                 </ul>
                 <div className="comment-time">55분 전</div>
                 {/* 인풋창 */}
-                <form className="feeds-comment-input" onSubmit={onButtonClick}>
+                <form className="feeds-comment-input" onSubmit={onFormSubmit}>
                   <div className="comment-input">
                     <input
                       className="comment-text"
