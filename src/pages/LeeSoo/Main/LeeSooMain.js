@@ -1,31 +1,46 @@
 /*eslint-disable */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './LeeSooMain.scss';
 import Nav from '../../../components/Nav/Nav';
 import Comments from './Comments.js';
 
 const LeeSooMain = props => {
-  let [UserNames, UserNamesChange] = useState([
-    'AnndohyeonHeisKing',
-    'HyeonSooHeisGod',
+  const [counter, setCounter] = useState(4);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET', // GET method는 기본값이라서 생략이 가능합니다.
+    }) // 예시코드에서는 이해를 돕기 위해 명시적으로 기입해뒀습니다.
+      .then(res => res.json())
+      .then(data => {
+        setCommentList(data);
+      });
+  }, []);
+
+  let [commentList, setCommentList] = useState([
+    {
+      id: '',
+      userName: '',
+      content: '',
+      isLiked: '',
+    },
   ]);
-  let [UserComments, UserCommentsChange] = useState([
-    '포기하지마요 !!! 😬',
-    '재밌는 자세네요? 👓👓👓',
-  ]);
-  let [Likes, LikesChange] = useState([false]);
 
   let [inputValues, inputValuesChange] = useState('');
 
   let EnterCatch = e => {
     if (e.key === 'Enter') {
       {
-        let commentsCopy = [...UserComments];
-        let myNameCopy = [...UserNames];
-        myNameCopy.push('Sooboi_97');
-        commentsCopy.push(inputValues);
-        UserCommentsChange(commentsCopy);
-        UserNamesChange(myNameCopy);
+        setCounter(counter => counter + 1);
+        setCommentList([
+          ...commentList,
+          {
+            id: counter,
+            userName: 'Sooboi_97',
+            content: inputValues,
+            isLiked: false,
+          },
+        ]);
         inputValuesChange('');
       }
     }
@@ -89,11 +104,7 @@ const LeeSooMain = props => {
             </div>
             <div className="Comments-show">
               {/* 여기에 댓글 기능 구현하기 */}
-              <Comments
-                userNames={UserNames}
-                userComments={UserComments}
-                likes={Likes}
-              />
+              <Comments list={commentList} />
             </div>
             {/* 여기에 댓글 입력창 구현하기 */}
             <div className="Comments-write" onKeyDown={EnterCatch}>

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 function Comments(props) {
-  const userNames = props.userNames.map((a, i) => (
-    <div className="Comments-list">
-      <span className="nick">{a} </span>
-      <span className="text">{props.userComments[i]}</span>
+  // const [commentList, setCommentList] = useState([]);
+
+  const userNames = props.list.map(data => (
+    <div key={data.id} className="Comments-list">
+      <span className="nick">{data.userName} </span>
+      <span className="text">{data.content}</span>
       <span className="like">
         <i class="fa-solid fa-heart" />
       </span>

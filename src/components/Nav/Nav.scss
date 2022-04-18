@@ -5,7 +5,6 @@
   top: 0;
   background-color: white;
   border-bottom: 1px solid #fafafa;
-
   div {
     .nav-bar {
       display: flex;
@@ -13,17 +12,15 @@
       justify-content: space-between;
       padding-top: 10px;
       padding-left: 20px;
-
       .nav-img {
         position: relative;
         width: 20px;
         top: 5px;
         margin-left: 20px;
       }
-
       .nav-logo {
         .nav-logo-title {
-          font-family: 'Lobster', cursive;
+          font-family: ‘Lobster’, cursive;
           font-size: 1.5em;
         }
       }
@@ -37,11 +34,14 @@
           width: 200px;
           height: 30px;
           padding-left: 45px;
-          color: #cacaca;
+          color: #7c7c7c;
           background-color: #efefef;
           outline: 0;
           border: 0;
           border-radius: 3px;
+        }
+        .nav-search-input::placeholder {
+          color: #cacaca;
         }
       }
       .nav-icon {
