@@ -4,6 +4,7 @@ import Comments from './Comments';
 
 function Feeds(props) {
   const [counter, setCounter] = useState(4);
+  let [commentList, setCommentList] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:3000/data/commentData.json', {
@@ -14,15 +15,6 @@ function Feeds(props) {
         setCommentList(data);
       });
   }, []);
-
-  let [commentList, setCommentList] = useState([
-    {
-      id: '',
-      userName: '',
-      content: '',
-      isLiked: '',
-    },
-  ]);
 
   let [inputValues, inputValuesChange] = useState('');
 
@@ -53,7 +45,7 @@ function Feeds(props) {
             src="/images/LeeSoo/userImg.jpg"
             className="userImg"
           />
-          <p>Iwannarest_TT</p>
+          <p>{props.title}</p>
           <span className="dotMore">
             <a href="#">
               <i className="fa-solid fa-ellipsis" />
@@ -61,7 +53,10 @@ function Feeds(props) {
           </span>
         </div>
         <div className="article-main">
-          <img alt="피드사진" src="/images/LeeSoo/feed.jpg" />
+          <img
+            alt="피드사진"
+            src={'/images/LeeSoo/feed' + props.imgList + '.jpg'}
+          />
         </div>
         <div className="article-bar">
           <div className="bar-left">

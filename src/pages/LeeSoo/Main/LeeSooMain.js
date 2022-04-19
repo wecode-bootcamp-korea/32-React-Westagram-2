@@ -6,13 +6,30 @@ import Nav from '../../../components/Nav/Nav';
 import Feeds from './Feeds.js';
 
 const LeeSooMain = props => {
+  const [feedData, setFeedData] = useState([]);
+  const imgList = 1;
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/sooFeedData.json')
+      .then(response => response.json())
+      .then(response => setFeedData(response));
+  }, []);
+
   return (
     <div className="wrapper">
       <Nav />
       <main>
         <div className="Feed-list">
-          <Feeds />
-          <Feeds />
+          {feedData.map(data => {
+            return (
+              <Feeds
+                key={data.id}
+                title={data.title}
+                isLiked={data.isLiked}
+                imgList={imgList}
+              />
+            );
+          })}
         </div>
         <div className="main-right">
           <div className="box-right">
