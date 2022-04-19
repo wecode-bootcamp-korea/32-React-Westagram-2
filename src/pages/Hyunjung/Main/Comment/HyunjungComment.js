@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './HyunjungComment.scss';
 
-const Comment = ({ commentArr }) => {
-  return commentArr.map(e => {
-    return (
-      <li className="comment" key={e.id}>
+const Comment = ({ comment }) => {
+  return (
+    <ul className="feeds-comment">
+      {/* {feedsArr.map(e => ( */}
+      <li className="comment" key={comment.id}>
         <div className="comment-left">
-          <span className="comment-id">{e.userId}</span>
-          <span className="comment-content">{e.comment}</span>
+          <span className="comment-id">{comment.userName}</span>
+          <span className="comment-content">{comment.content}</span>
         </div>
         <div className="comment-right">
           <button className="comment-like">
@@ -18,8 +19,9 @@ const Comment = ({ commentArr }) => {
           </button>
         </div>
       </li>
-    );
-  });
+      {/* ))} */}
+    </ul>
+  );
 };
 
 export default Comment;

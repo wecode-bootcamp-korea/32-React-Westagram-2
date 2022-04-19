@@ -54,7 +54,7 @@
 
         .fa-icon {
           padding-right: 10px;
-          font-size: 25px;
+          font-size: 1em;
         }
         .feeds-icon-left {
           span {
@@ -76,6 +76,9 @@
         .feeds-article {
           padding: 0 10px;
           text-align: initial;
+          .feed-article-id {
+            font-weight: 50px;
+          }
 
           .feeds-article-over {
             color: #cacaca;
