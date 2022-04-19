@@ -21,28 +21,28 @@ const DeokWooAside = props => {
           <div className="story_main">
             <ul>
               <li>
-                <div className="pic"></div>
+                <div className="pic" />
                 <div className="id">
                   <p>_yum_s</p>
                   <p>16분 전</p>
                 </div>
               </li>
               <li>
-                <div className="pic"></div>
+                <div className="pic" />
                 <div className="id">
                   <p>drink_eat_drink</p>
                   <p>3시간 전</p>
                 </div>
               </li>
               <li>
-                <div className="pic"></div>
+                <div className="pic" />
                 <div className="id">
                   <p>hyukyc</p>
                   <p>20시간 전</p>
                 </div>
               </li>
               <li>
-                <div className="pic"></div>
+                <div className="pic" />
                 <div className="id">
                   <p>jminkeek</p>
                   <p>24시간 전</p>
@@ -59,7 +59,7 @@ const DeokWooAside = props => {
           <div className="rec_main">
             <ul>
               <li>
-                <div className="pic"></div>
+                <div className="pic" />
                 <div className="id">
                   <p>joaaaaaahye</p>
                   _legend_a님 외 2명이 좋아합니다
@@ -67,7 +67,7 @@ const DeokWooAside = props => {
                 <button>팔로우</button>
               </li>
               <li>
-                <div className="pic"></div>
+                <div className="pic" />
                 <div className="id">
                   <p>rampart81</p>
                   ringo.in.seoul님 외 12명이 좋아합니다
@@ -75,7 +75,7 @@ const DeokWooAside = props => {
                 <button>팔로우</button>
               </li>
               <li>
-                <div className="pic"></div>
+                <div className="pic" />
                 <div className="id">
                   <p>shawnjjoo</p>
                   jimmylee1220님 외 11명이 좋아합니다.

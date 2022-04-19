@@ -16,13 +16,13 @@ const ReplyInput = ({ newText, handleChange }) => {
   );
 };
 
-const NewReply = ({ lists, handleDelete }) => {
+const NewReply = ({ lists, handleDelete, isLike }) => {
   return (
     <ul className="reply_list">
       {lists.map(({ userName, id, context }) => (
         <li key={id}>
           <span>{userName}</span> {context}
-          <i className="fa-regular fa-heart" />
+          <Heart isLike={isLike} size="" />
           <button onClick={() => handleDelete(id)} className="delete">
             삭제
           </button>
@@ -32,7 +32,7 @@ const NewReply = ({ lists, handleDelete }) => {
   );
 };
 
-const Comment = () => {
+const Comment = ({ isLike }) => {
   const [newText, setNewText] = useState({
     userName: 'wecode_bootcamp',
     id: Date.now(),
@@ -72,6 +72,7 @@ const Comment = () => {
 
   const isCheckSpace = str => {
     const regExp = /[^\s|^$]/g;
+
     if (str === undefined) {
       return false;
     } else if (regExp.test(str)) {
@@ -84,7 +85,7 @@ const Comment = () => {
   return (
     <>
       <div className="left_reply">
-        <NewReply lists={list} handleDelete={handleDelete} />
+        <NewReply isLike={isLike} lists={list} handleDelete={handleDelete} />
       </div>
       <div className="left_timeline">
         <span id="time">42분</span> 전
@@ -105,7 +106,20 @@ const Comment = () => {
   );
 };
 
+const Heart = ({ isLike }) => {
+  return <i onClick={isLike} className="fa-regular fa-heart" />;
+};
+
 const Feeds = ({ feeds }) => {
+  const [like, setLike] = useState(false);
+
+  const likeHandler = ({ target }) => {
+    setLike(!like);
+    like
+      ? (target.className = 'fa-solid fa-heart heart')
+      : (target.className = 'fa-regular fa-heart');
+  };
+
   return feeds.map(({ userName, context, likes, source, id }) => (
     <div key={id} className="feeds">
       <header className="left_head">
@@ -124,9 +138,9 @@ const Feeds = ({ feeds }) => {
       </figure>
       <div className="left_icon">
         <div className="icon_left">
-          <i className="fa-regular fa-heart fa-xl" />
-          <i className="fa-regular fa-comment fa-xl" />
-          <i className="fa-solid fa-arrow-up-from-bracket fa-xl" />
+          <Heart isLike={likeHandler} />
+          <i className="fa-regular fa-comment" />
+          <i className="fa-solid fa-arrow-up-from-bracket" />
         </div>
         <div className="icon_right">
           <i className="fa-regular fa-bookmark fa-xl" />
@@ -146,7 +160,7 @@ const Feeds = ({ feeds }) => {
           <span id="id1">{userName}</span> {context}
         </p>
       </div>
-      <Comment />
+      <Comment isLike={likeHandler} />
     </div>
   ));
 };

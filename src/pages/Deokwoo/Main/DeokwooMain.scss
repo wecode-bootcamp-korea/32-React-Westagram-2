@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.heart {
+  color: red;
+}
+
 .allSection {
   display: flex;
   justify-content: center;
@@ -76,6 +80,7 @@
 
   .left_icon .icon_left i {
     margin-right: 10px;
+    font-size: 24px;
   }
 
   .left_icon .icon_left i:last-child {
