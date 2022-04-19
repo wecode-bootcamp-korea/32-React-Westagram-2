@@ -35,7 +35,7 @@ function Feeds(props) {
       }
     }
   };
-
+  console.log(props);
   return (
     <div className="contents">
       <article>
@@ -53,10 +53,7 @@ function Feeds(props) {
           </span>
         </div>
         <div className="article-main">
-          <img
-            alt="피드사진"
-            src={'/images/LeeSoo/feed' + props.imgList + '.jpg'}
-          />
+          <img alt="피드사진" src={props.source} />
         </div>
         <div className="article-bar">
           <div className="bar-left">

@@ -1,12 +1,14 @@
 [
   {
-    "id": 1,
+    "num": 1,
     "title": "MickyWanna_DC",
+    "title2": "/images/LeeSoo/feed1.jpg",
     "isLiked": false
   },
   {
-    "id": 2,
+    "num": 2,
     "title": "King_hyeong_Soo",
+    "title2": "/images/LeeSoo/feed2.jpg",
     "isLiked": false
   }
 ]

@@ -7,7 +7,6 @@ import Feeds from './Feeds.js';
 
 const LeeSooMain = props => {
   const [feedData, setFeedData] = useState([]);
-  const imgList = 1;
 
   useEffect(() => {
     fetch('http://localhost:3000/data/sooFeedData.json')
@@ -26,7 +25,7 @@ const LeeSooMain = props => {
                 key={data.id}
                 title={data.title}
                 isLiked={data.isLiked}
-                imgList={imgList}
+                source={data.title2}
               />
             );
           })}
