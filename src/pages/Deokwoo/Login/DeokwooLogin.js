@@ -1,20 +1,14 @@
 import React, { useState } from 'react';
 import './DeokwooLogin.scss';
 
-const Input = props => {
-  return (
-    <input
-      type={props.type}
-      className={props.name}
-      placeholder={props.holder}
-    ></input>
-  );
+const Input = ({ type, name, holder }) => {
+  return <input type={type} className={name} placeholder={holder} />;
 };
 
-const Button = props => {
+const Button = ({ valid, name, children }) => {
   return (
-    <button disabled={props.valid} className={props.name}>
-      {props.children}
+    <button disabled={valid} className={name}>
+      {children}
     </button>
   );
 };
@@ -23,10 +17,10 @@ const DeokWooLogin = () => {
   const [inputId, setInputId] = useState('');
   const [inputPw, setInputPw] = useState('');
 
-  const changeValue = e => {
-    e.target.className === 'id'
-      ? setInputId(e.target.value)
-      : setInputPw(e.target.value);
+  const changeValue = ({ target }) => {
+    target.className === 'id'
+      ? setInputId(target.value)
+      : setInputPw(target.value);
   };
 
   let isValid = inputId.includes('@') && inputPw.length > 5;

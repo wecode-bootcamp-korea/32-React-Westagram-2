@@ -18,10 +18,13 @@
     flex-direction: column;
     width: 614px;
     margin-right: 28px;
-    border: 1px solid rgb(220, 220, 220);
-    background-color: white;
   }
 
+  .feeds {
+    border: 1px solid rgb(220, 220, 220);
+    background-color: white;
+    margin-bottom: 30px;
+  }
   /* 피드 머릿글 */
 
   .left_head {
@@ -98,7 +101,7 @@
   /* 피드 본문내용 */
 
   .left_content {
-    padding: 0 15px;
+    padding: 5px 15px;
   }
 
   .left_content #id1 {
@@ -113,19 +116,23 @@
 
   .left_reply ul {
     list-style: none;
-  }
 
-  .left_reply ul li i {
-    float: right;
-  }
+    li {
+      margin-bottom: 5px;
+    }
 
-  .left_reply ul li .delete {
-    float: right;
-    margin-right: 10px;
-    border: none;
-    background-color: white;
-    color: rgb(85, 150, 230);
-    cursor: pointer;
+    li i {
+      float: right;
+    }
+
+    li .delete {
+      float: right;
+      margin-right: 10px;
+      border: none;
+      background-color: white;
+      color: rgb(85, 150, 230);
+      cursor: pointer;
+    }
   }
 
   .left_reply span {

@@ -10,7 +10,7 @@ const Nav = props => {
             <h1 className="nav-logo-title">
               <img
                 alt="westagram-logo"
-                src="./images/Deokwoo/instagram.png"
+                src="./images/common/instagram.png"
                 className="nav-img"
               />{' '}
               | westagram

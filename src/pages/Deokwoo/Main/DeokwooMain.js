@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Nav from '../../../components/Nav/Nav';
+import DeokWooAside from './Aside/DeokwooAside';
 import './DeokwooMain.scss';
 
 const ReplyInput = ({ newText, handleChange }) => {
@@ -18,10 +19,10 @@ const ReplyInput = ({ newText, handleChange }) => {
 const NewReply = ({ lists, handleDelete }) => {
   return (
     <ul className="reply_list">
-      {lists.map(({ id, context }) => (
+      {lists.map(({ userName, id, context }) => (
         <li key={id}>
-          <span>wecode_bootcamp</span> {context}
-          <i className="fa-regular fa-heart"></i>
+          <span>{userName}</span> {context}
+          <i className="fa-regular fa-heart" />
           <button onClick={() => handleDelete(id)} className="delete">
             삭제
           </button>
@@ -32,12 +33,21 @@ const NewReply = ({ lists, handleDelete }) => {
 };
 
 const Comment = () => {
-  const [newText, setNewText] = useState({ id: Date.now(), context: '' });
+  const [newText, setNewText] = useState({
+    userName: 'wecode_bootcamp',
+    id: Date.now(),
+    context: '',
+  });
   const [list, setList] = useState([]);
 
   const handleChange = ({ target }) => {
     const [name, value] = [target.name, target.value];
-    setNewText(prev => ({ ...prev, id: Date.now(), [name]: value }));
+    setNewText(prev => ({
+      ...prev,
+      userName: 'wecode_bootcamp',
+      id: Date.now(),
+      [name]: value,
+    }));
   };
 
   const handleDelete = id => {
@@ -50,9 +60,18 @@ const Comment = () => {
     setNewText('');
   };
 
-  const checkSpace = str => {
-    const regExp = /[^\s|^$]/g;
+  useEffect(() => {
+    fetch('http://localhost:3000/data/comment.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setList(data);
+      });
+  }, []);
 
+  const isCheckSpace = str => {
+    const regExp = /[^\s|^$]/g;
     if (str === undefined) {
       return false;
     } else if (regExp.test(str)) {
@@ -74,10 +93,10 @@ const Comment = () => {
         <ReplyInput newText={newText} handleChange={handleChange} />
         <button
           className={
-            !checkSpace(newText.context) ? 'replyent' : 'replyent active'
+            !isCheckSpace(newText.context) ? 'replyent' : 'replyent active'
           }
           onClick={replyEntry}
-          disabled={!checkSpace(newText.context)}
+          disabled={!isCheckSpace(newText.context)}
         >
           게시
         </button>
@@ -86,137 +105,80 @@ const Comment = () => {
   );
 };
 
+const Feeds = ({ feeds }) => {
+  return feeds.map(({ userName, context, likes, source, id }) => (
+    <div key={id} className="feeds">
+      <header className="left_head">
+        <div className="head_left">
+          <div className="pic">
+            <img src="../../../images/deokwoo/1.JPG" alt="" />
+          </div>
+          <span>{userName}</span>
+        </div>
+        <div className="head_right">
+          <i className="fa-solid fa-ellipsis fa-xl" />
+        </div>
+      </header>
+      <figure className="left_body">
+        <img alt="feedpicture" src={source} />
+      </figure>
+      <div className="left_icon">
+        <div className="icon_left">
+          <i className="fa-regular fa-heart fa-xl" />
+          <i className="fa-regular fa-comment fa-xl" />
+          <i className="fa-solid fa-arrow-up-from-bracket fa-xl" />
+        </div>
+        <div className="icon_right">
+          <i className="fa-regular fa-bookmark fa-xl" />
+        </div>
+      </div>
+      <div className="left_like">
+        <div className="pic">
+          <img alt="profilepic" src="../../../images/deokwoo/1.JPG" />
+        </div>
+        <p>
+          <strong>aineworld</strong>님 외 <strong>{likes}명</strong>이
+          좋아합니다
+        </p>
+      </div>
+      <div className="left_content">
+        <p>
+          <span id="id1">{userName}</span> {context}
+        </p>
+      </div>
+      <Comment />
+    </div>
+  ));
+};
+
+const Article = () => {
+  const [feed, setFeed] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/feedData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setFeed(data);
+      });
+  }, []);
+
+  return (
+    <article className="main_left">
+      <Feeds feeds={feed} />
+    </article>
+  );
+};
+
 const DeokWooMain = () => {
   return (
     <main>
       <Nav />
       <section className="allSection">
-        <article className="main_left">
-          <header className="left_head">
-            <div className="head_left">
-              <div className="pic">
-                <img src="/images/Deokwoo/1.JPG" alt="" />
-              </div>
-              <span>canon_mj</span>
-            </div>
-            <div className="head_right">
-              <i className="fa-solid fa-ellipsis fa-xl"></i>
-            </div>
-          </header>
-          <figure className="left_body">
-            <img alt="feedpicture" src="/images/Deokwoo/2.jpeg" />
-          </figure>
-          <div className="left_icon">
-            <div className="icon_left">
-              <i className="fa-regular fa-heart fa-xl"></i>
-              <i className="fa-regular fa-comment fa-xl"></i>
-              <i className="fa-solid fa-arrow-up-from-bracket fa-xl"></i>
-            </div>
-            <div className="icon_right">
-              <i className="fa-regular fa-bookmark fa-xl"></i>
-            </div>
-          </div>
-          <div className="left_like">
-            <div className="pic">
-              <img alt="profilepic" src="/images/Deokwoo/1.JPG" />
-            </div>
-            <p>
-              <strong>aineworld</strong>님 외 <strong>10명</strong>이 좋아합니다
-            </p>
-          </div>
-          <div className="left_content">
-            <p>
-              <span id="id1">canon_mj</span> 위워크에서 진행한 베이킹 클래스...
-            </p>
-          </div>
-          <Comment />
-        </article>
-        <div className="main_fixed"></div>
-        <div className="main_right">
-          <header className="right_header">
-            <div className="pic">
-              <img alt="profilepic" src="/images/Deokwoo/3.jpeg" />
-            </div>
-            <div className="id">
-              <p id="id">wecode_bootcamp</p>
-              <p className="descript">WeCode | 위코드</p>
-            </div>
-          </header>
-          <div className="right_body">
-            <div className="story">
-              <header className="story_header">
-                <p className="title">스토리</p>
-                <p className="all">모두 보기</p>
-              </header>
-              <div className="story_main">
-                <ul>
-                  <li>
-                    <div className="pic"></div>
-                    <div className="id">
-                      <p>_yum_s</p>
-                      <p>16분 전</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="pic"></div>
-                    <div className="id">
-                      <p>drink_eat_drink</p>
-                      <p>3시간 전</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="pic"></div>
-                    <div className="id">
-                      <p>hyukyc</p>
-                      <p>20시간 전</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="pic"></div>
-                    <div className="id">
-                      <p>jminkeek</p>
-                      <p>24시간 전</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="recommand">
-              <header className="rec_header">
-                <p className="title">회원님을 위한 추천</p>
-                <p className="all">모두 보기</p>
-              </header>
-              <div className="rec_main">
-                <ul>
-                  <li>
-                    <div className="pic"></div>
-                    <div className="id">
-                      <p>joaaaaaahye</p>
-                      _legend_a님 외 2명이 좋아합니다
-                    </div>
-                    <button>팔로우</button>
-                  </li>
-                  <li>
-                    <div className="pic"></div>
-                    <div className="id">
-                      <p>rampart81</p>
-                      ringo.in.seoul님 외 12명이 좋아합니다
-                    </div>
-                    <button>팔로우</button>
-                  </li>
-                  <li>
-                    <div className="pic"></div>
-                    <div className="id">
-                      <p>shawnjjoo</p>
-                      jimmylee1220님 외 11명이 좋아합니다.
-                    </div>
-                    <button>팔로우</button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Article />
+        <div className="main_fixed" />
+        <DeokWooAside />
       </section>
     </main>
   );
