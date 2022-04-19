@@ -26,6 +26,11 @@ const LeeJiSooMainBottom = props => {
         <span>{props.nickname}</span>
         <span>외 {props.num}명이 좋아합니다</span>
       </div>
+      <div className="writerComment">
+        {' '}
+        <span>{props.nickname}</span>
+        <span> {props.comment}</span>
+      </div>
     </section>
   );
 };

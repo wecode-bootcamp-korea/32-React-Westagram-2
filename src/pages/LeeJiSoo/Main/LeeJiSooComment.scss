@@ -1,61 +1,60 @@
+$line-color: #afa9a9;
 section {
   display: flex;
   flex-direction: column;
   width: 100%;
-}
+  .indiComment {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
-.comment > ul > li {
-  display: flex;
-  flex-direction: row;
-}
+    .commentandBtn {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      .commentCon {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 13px;
+      }
+      .commentBtnContainer {
+        display: flex;
+        background-color: transparent;
+        margin-right: 10px;
+      }
+      button {
+        width: 10%;
+      }
+    }
+  }
+  .showComment {
+    margin-left: 12px;
+    margin-top: 5px;
+    color: $line-color;
+  }
 
-.commentCon {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-left: 13px;
-}
-
-button {
-  border: none;
-  color: rgba(0, 0, 0, 0.54);
-  background-color: #ffffff;
-  text-align: center;
-}
-
-.commentBtnContainer {
-  display: flex;
-  justify-content: space-evenly;
-  background-color: transparent;
-}
-
-.commentandBtn {
-  display: flex;
-}
-
-.writing {
-  display: flex;
-  flex-direction: row;
-  border: 1px 0px 1px 0px var(--line-color) solid;
-}
-
-.writing > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 55px;
-}
-
-.writing > input {
-  border-radius: 0px;
-  width: 100%;
-  height: 43px;
-  background-color: transparent;
-}
-
-button {
-  width: 50px;
-  border: none;
-  color: rgba(0, 0, 0, 0.54);
-  background-color: #ffffff;
+  .writing {
+    display: flex;
+    flex-direction: row;
+    border: 1px 0px 1px 0px var(--line-color) solid;
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 55px;
+    }
+    input {
+      border-radius: 0px;
+      width: 100%;
+      height: 43px;
+      background-color: transparent;
+    }
+  }
+  button {
+    width: 50px;
+    border: none;
+    color: rgba(0, 0, 0, 0.54);
+    background-color: #ffffff;
+  }
 }

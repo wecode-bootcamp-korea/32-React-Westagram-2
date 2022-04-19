@@ -1,6 +1,7 @@
 $line-color: #dbdbdb;
+$text-color: #c0bcbc;
 $background: #fafafa;
-
+$black: #4c4b50;
 main {
   display: flex;
   flex-direction: row;
@@ -13,120 +14,132 @@ body {
   background-color: $background;
 }
 
-.contentContainer {
+.feedCon {
   display: flex;
   flex-direction: column;
-  border: 1px solid $line-color;
-  height: fit-content;
-  border-radius: 5px;
-  margin-right: 50px;
-  margin-top: 30px;
-  .nameCon {
+  align-items: center;
+  .contentContainer {
     display: flex;
-    flex-direction: row;
-    height: 60px;
-    max-width: 610px;
-    background-color: #ffffff;
-    .imgDiv {
-      align-items: center;
-      margin: 5px;
-      width: 64px;
-      height: 64px;
-      .name {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-      }
-    }
-    .nameDiv {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-  }
-
-  .imgContainer {
-    margin-bottom: 12px;
-    .mainimg {
-      max-width: 610px;
-      height: 680px;
-    }
-  }
-  .imgiconDiv {
-    .lowerIcon {
+    flex-direction: column;
+    border: 1px solid $line-color;
+    height: fit-content;
+    border-radius: 5px;
+    margin-right: 50px;
+    margin-top: 30px;
+    .nameCon {
       display: flex;
       flex-direction: row;
-      align-content: center;
-      justify-content: space-between;
-      text-align: center;
-      .iconDiv {
-        display: flex;
-        margin-left: 12px;
-        height: 58px;
+      height: 60px;
+      max-width: 610px;
+      background-color: #ffffff;
+      .imgDiv {
         align-items: center;
-        .iconB {
+        margin: 5px;
+        width: 64px;
+        height: 64px;
+        .name {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+      }
+      .nameDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+    }
+
+    .imgContainer {
+      margin-bottom: 12px;
+      .mainimg {
+        max-width: 610px;
+        height: 680px;
+      }
+    }
+    .imgiconDiv {
+      .lowerIcon {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: space-between;
+        text-align: center;
+        .iconDiv {
+          display: flex;
+          margin-left: 12px;
+          height: 58px;
+          align-items: center;
+          .iconB {
+            margin: 5px;
+            font-size: 23px;
+            margin-right: 10px;
+            color: $black;
+          }
+        }
+        .fa-bookmark {
           margin: 5px;
           font-size: 23px;
           margin-right: 10px;
         }
       }
-      .fa-bookmark {
-        margin: 5px;
-        font-size: 23px;
-        margin-right: 10px;
-      }
-    }
 
-    .like {
-      display: flex;
-      flex-direction: row;
-      margin-left: 12px;
-    }
-  }
-  .commentSection {
-    .comment {
-      margin-left: 2px;
-
-      ul > li {
+      .like {
         display: flex;
         flex-direction: row;
+        margin-left: 12px;
       }
-      .indiComment {
-        margin: 4px 0px 4px 0px;
-        .commentCon {
-          display: flex;
-          flex-direction: row;
-          .commentName {
-            margin-right: 3px;
-          }
-        }
-        .commentBtnContainer {
-          display: flex;
-          justify-content: space-evenly;
-          background-color: transparent;
-        }
-        .commentBtn:hover {
-          border: 1px solid black;
-        }
+      .writerComment {
+        margin-top: 5px;
+        margin-left: 12px;
       }
     }
-    .writing {
-      display: flex;
-      flex-direction: row;
-      border: 1px 0px 1px 0px $line-color solid;
-      div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 55px;
+
+    .commentSection {
+      .comment {
+        margin-left: 2px;
+
+        ul > li {
+          display: flex;
+          flex-direction: row;
+        }
+        .indiComment {
+          margin: 4px 0px 4px 0px;
+          .commentCon {
+            display: flex;
+            flex-direction: row;
+            .commentName {
+              margin-right: 3px;
+            }
+          }
+          .commentBtnContainer {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: transparent;
+          }
+          .commentBtn:hover {
+            border: 1px solid $black;
+          }
+        }
       }
-      input {
-        border-radius: 0px;
-        width: 100%;
-        height: 43px;
-        background-color: transparent;
+      .writing {
+        display: flex;
+        flex-direction: row;
+        border: 1px 0px 1px 0px $line-color solid;
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 55px;
+        }
+        input {
+          border-radius: 0px;
+          width: 100%;
+          height: 43px;
+          border: none;
+          background-color: transparent;
+        }
       }
     }
   }
@@ -152,6 +165,7 @@ body {
     height: 96px;
     margin: 5px 0px 5px 0px;
     .info {
+      margin-left: 10px;
       font-size: 13px;
       display: flex;
       flex-direction: row;
@@ -172,9 +186,17 @@ body {
   .story {
     .titleDiv {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      padding: 10px;
-      margin: 6px;
+      width: 315px;
+      margin-bottom: 15px;
+      color: $text-color;
+      font-size: 13px;
+      p:last-child {
+        width: 30%;
+        color: $black;
+        font-weight: 600;
+      }
     }
 
     .recommand {
@@ -183,14 +205,27 @@ body {
       }
       .imgDiv {
         height: 38px;
+        margin-right: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: $black;
+        border-radius: 50%;
       }
       img {
         width: 32px;
         height: 32px;
       }
+    }
+  }
+  .sideInfo {
+    margin-bottom: 350px;
+    color: $line-color;
+    div {
+      width: 315px;
+      margin-top: 20px;
+      font-size: 14px;
+      line-height: 1.3rem;
     }
   }
 }
@@ -199,17 +234,68 @@ span {
   margin: 5px 0px 5px 5px;
 }
 
-.sideInfo {
-  margin-bottom: 350px;
-  color: $line-color;
-  div {
-    width: 315px;
-    margin-top: 20px;
-    font-size: 14px;
-    line-height: 1.3rem;
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .sideContainer {
+    display: none;
+  }
+  .nameCon {
+    max-width: 600px;
   }
 }
 
-.hidden {
-  display: none;
+.searchList {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 355px;
+  height: 355px;
+  top: 50px;
+  left: 800px;
+  border: 1px $line-color solid;
+  border-radius: 5px;
+  background-color: #ffffff;
+  .spanCon {
+    display: flex;
+    height: 48px;
+    align-items: center;
+    span {
+      font-weight: 600;
+      padding: 8px;
+      margin-right: 200px;
+    }
+  }
+  li {
+    .profile {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 47px;
+
+      font-size: 16px;
+      margin: 5px;
+      ul {
+        width: 100%;
+      }
+      .imgDiv {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+
+        img {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
 }

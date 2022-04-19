@@ -2,9 +2,8 @@ import { faTrashCan, faHeart } from '@fortawesome/free-regular-svg-icons';
 import { useState } from 'react';
 import { faHeartPulse } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 const NewComment = ({ item, delteComment }) => {
-  const [isitlike, setLike] = useState(item.like);
+  const [isitlike, setLike] = useState(item.isLiked);
 
   const clickLike = e => {
     if (!isitlike) {
@@ -22,7 +21,7 @@ const NewComment = ({ item, delteComment }) => {
         {' '}
         <div className="commentCon">
           <p className="commentName">{item.userName}</p>
-          <p className="speak">{item.said}</p>
+          <p className="speak">{item.content}</p>
         </div>
         <div className="commentBtnContainer">
           <button onClick={clickLike} className="commentBtn" id="likebtn">

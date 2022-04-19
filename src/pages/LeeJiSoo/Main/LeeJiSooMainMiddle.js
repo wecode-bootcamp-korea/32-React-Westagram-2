@@ -1,7 +1,7 @@
-const LeeJiSooMainMiddle = () => {
+const LeeJiSooMainMiddle = prop => {
   return (
     <section className="imgContainer">
-      <img className="mainimg" src={'images/LeeJiSoo/room.png'} />
+      <img className="mainimg" src={prop.src} />
     </section>
   );
 };

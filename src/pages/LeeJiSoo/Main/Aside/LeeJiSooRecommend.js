@@ -1,37 +1,15 @@
 import LeeJiSooCard from './LeeJiSooCard';
+import { useEffect, useState } from 'react';
+
 const LeeJiSooRecommend = props => {
-  const data = [
-    {
-      userName: 'keroppi',
-      src: '/images/LeeJiSoo/room.png',
-      text: 'mushroom님외 2명이 팔로우..',
-      follow: true,
-    },
-    {
-      userName: 'mushroom',
-      src: '/images/LeeJiSoo/mushroom.png',
-      text: 'mushroom님외 2명이 팔로우..',
-      follow: true,
-    },
-    {
-      userName: 'pompom',
-      src: '/images/LeeJiSoo/covid.PNG',
-      text: 'mushroom님외 2명이 팔로우..',
-      follow: true,
-    },
-    {
-      userName: 'pompom',
-      src: '/images/LeeJiSoo/covid.PNG',
-      text: 'mushroom님외 2명이 팔로우..',
-      follow: true,
-    },
-    {
-      userName: 'pompom',
-      src: '/images/LeeJiSoo/covid.PNG',
-      text: 'mushroom님외 2명이 팔로우..',
-      follow: true,
-    },
-  ];
+  const [feed, setFeed] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/feedData.json', { method: 'GET' })
+      .then(res => res.json())
+      .then(data => setFeed(data));
+  }, []);
+
   return (
     <section class="story">
       <div className="titleDiv">
@@ -39,10 +17,10 @@ const LeeJiSooRecommend = props => {
         <p>{props.info}</p>
       </div>
       <div className="recommand">
-        {data.map(item => (
+        {feed.map(item => (
           <LeeJiSooCard
             userName={item.userName}
-            content={item.text}
+            content={item.recommand}
             src={item.src}
             follow={item.follow === true ? '팔로우' : ''}
           />
