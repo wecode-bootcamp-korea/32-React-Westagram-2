@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "userName": "canon_mj",
+    "context": "위워크에서 진행한 베이킹 클래스...",
+    "likes": 10,
+    "source": "../../../images/deokwoo/2.jpeg"
+  },
+  {
+    "id": 2,
+    "userName": "wecode",
+    "context": "Welcome to world best coding bootcamp!",
+    "likes": 10,
+    "source": "../../../images/deokwoo/2.jpeg"
+  },
+  {
+    "id": 3,
+    "userName": "joonsikyang",
+    "context": "Hi there.",
+    "likes": 25,
+    "source": "../../../images/deokwoo/2.jpeg"
+  },
+  {
+    "id": 4,
+    "userName": "jayPark",
+    "context": "Hey.",
+    "likes": 12,
+    "source": "../../../images/deokwoo/2.jpeg"
+  }
+]

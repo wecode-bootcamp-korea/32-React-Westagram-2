@@ -5,7 +5,6 @@
   top: 0;
   background-color: white;
   border-bottom: 1px solid #fafafa;
-  color: red;
 
   div {
     .nav-bar {
@@ -38,11 +37,14 @@
           width: 200px;
           height: 30px;
           padding-left: 45px;
-          color: #cacaca;
+          // color: #cacaca;
           background-color: #efefef;
           outline: 0;
           border: 0;
           border-radius: 3px;
+        }
+        .nav-search-input::placeholder {
+          color: #cacaca;
         }
       }
       .nav-icon {
