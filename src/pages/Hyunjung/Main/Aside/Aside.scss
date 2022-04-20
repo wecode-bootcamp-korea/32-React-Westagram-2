@@ -1,0 +1,112 @@
+.right {
+  .main-right {
+    width: 100%;
+    padding-left: 30px;
+    box-sizing: border-box;
+    div {
+      .aside-header {
+        display: flex;
+        padding: 10px;
+
+        .header-aside-img {
+          height: 40px;
+          width: 40px;
+          outline: 0;
+          border: 0;
+          border-radius: 20px;
+        }
+        .aside-id {
+          flex-direction: column;
+          padding-left: 10px;
+          .aside-id-bottom,
+          .aside-id-time {
+            color: #cacaca;
+          }
+        }
+      }
+      .aside-form {
+        .recommend,
+        .story {
+          margin-top: 15px;
+          border: 1px solid #cacaca;
+          background-color: #ffffff;
+          .story-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            .story-title {
+              color: #cacaca;
+            }
+          }
+          .aside-header {
+            .aside-img {
+              height: 35px;
+              width: 35px;
+              border: 2px solid red;
+              border-radius: 20px;
+              padding: 2px;
+            }
+          }
+          .aside-id {
+            flex-direction: column;
+            padding-left: 10px;
+            .aside-id-bottom,
+            .aside-id-time {
+              color: #cacaca;
+            }
+          }
+          .aside-right {
+            padding-top: 10px;
+            color: #cacaca;
+          }
+
+          .recommend-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            .recommend-title {
+              color: #cacaca;
+            }
+          }
+          .member {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            .member-header {
+              display: flex;
+              .aside-img {
+                height: 35px;
+                width: 35px;
+                border: 2px solid red;
+                border-radius: 20px;
+                padding: 2px;
+              }
+            }
+            .follow {
+              display: flex;
+              align-items: center;
+              color: #0095f6;
+            }
+          }
+        }
+        div {
+          .aside-info {
+            padding-top: 10px;
+            color: #cacaca;
+          }
+        }
+        .aside-right {
+          padding-top: 10px;
+          color: #cacaca;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .main-feeds {
+    .right {
+      display: none;
+    }
+  }
+}

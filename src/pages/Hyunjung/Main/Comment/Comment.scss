@@ -1,0 +1,21 @@
+li {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  .comment-left {
+    .comment-id {
+      font-weight: 700;
+    }
+    .comment-content {
+      padding-left: 5px;
+    }
+  }
+  .comment-right {
+    .comment-like,
+    .comment-delete {
+      outline: 0;
+      border: 0;
+      background-color: #fafafa;
+    }
+  }
+}

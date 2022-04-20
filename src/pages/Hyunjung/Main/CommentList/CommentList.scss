@@ -1,0 +1,39 @@
+div {
+  .feeds-comment {
+    padding: 10px;
+  }
+
+  .comment-time {
+    padding-left: 10px;
+    color: #cacaca;
+    text-align: initial;
+  }
+  .feeds-comment-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #cacaca;
+    .comment-input {
+      width: 90%;
+      outline: 0;
+      border: 0;
+      text-align: left;
+      .comment-text {
+        height: 18px;
+        padding: 10px;
+        background-color: #fafafa;
+        outline: 0;
+        border: 0;
+      }
+    }
+    .comment-button {
+      display: flex;
+      .comment-btn {
+        background-color: #fafafa;
+        color: #0095f6;
+        outline: 0;
+        border: 0;
+        font-size: 1em;
+      }
+    }
+  }
+}

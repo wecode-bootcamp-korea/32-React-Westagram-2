@@ -10,14 +10,14 @@ const Nav = props => {
             <h1 className="nav-logo-title">
               <img
                 alt="westagram-logo"
-                src="./images/instagram.png"
+                src="./images/common/instagram.png"
                 className="nav-img"
               />{' '}
               | westagram
             </h1>
           </div>
           <div className="nav-search">
-            <i className="fa-solid fa-magnifying-glass nav-search-icon"></i>
+            <i className="fa-solid fa-magnifying-glass nav-search-icon" />
             <input
               className="nav-search-input"
               type="text"
@@ -27,17 +27,17 @@ const Nav = props => {
           <div className="nav-icon">
             <img
               alt="explore-icon"
-              src="./images/explore.png"
+              src="./images/common/explore.png"
               className="nav-img nav-icon-exp"
             />
             <img
               alt="heart-icon"
-              src="/images/heart.png"
+              src="/images/common/heart.png"
               className="nav-img nav-icon-heart"
             />
             <img
               alt="profile-icon"
-              src="images/profile.png"
+              src="images/common/profile.png"
               className="nav-img nav-icon-profile"
             />
           </div>

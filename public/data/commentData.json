@@ -1,0 +1,88 @@
+[
+  {
+    "feedId": 1,
+    "headerName": "happy01",
+    "headerUrl": "/images/Hyunjung/main.png",
+    "imgUrl": "/images/Hyunjung/mainpage.jpg",
+    "articleName": "happy01",
+    "articleContent": "orange!!!!!",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Hey.",
+        "isLiked": false
+      }
+    ]
+  },
+
+  {
+    "feedId": 2,
+    "headerName": "smile_angry",
+    "headerUrl": "/images/Hyunjung/pro02.png",
+    "imgUrl": "/images/Hyunjung/main02.jpg",
+    "articleName": "smile_angry",
+    "articleContent": "HappyDay!!!!!!",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Hey.",
+        "isLiked": false
+      }
+    ]
+  },
+
+  {
+    "feedId": 3,
+    "headerName": "wink22_puppy",
+    "headerUrl": "/images/Hyunjung/pro04.png",
+    "imgUrl": "/images/Hyunjung/main03.jpg",
+    "articleName": "wink22_puppy",
+    "articleContent": "why!!!!!!",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Hey.",
+        "isLiked": false
+      }
+    ]
+  }
+]
