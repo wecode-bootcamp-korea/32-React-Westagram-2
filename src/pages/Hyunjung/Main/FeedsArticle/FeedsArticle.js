@@ -1,4 +1,5 @@
 import React from 'react';
+import './FeedsArticle.scss';
 
 const FeedsArticle = ({ feedsArr }) => {
   return (

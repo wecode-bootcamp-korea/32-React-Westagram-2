@@ -1,0 +1,22 @@
+.feeds-icon {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px;
+
+  .fa-icon {
+    padding-right: 10px;
+    font-size: 1.3em;
+  }
+
+  .feeds-icon-left {
+    span {
+      .feeds-icon-heart {
+        margin-left: -8px;
+      }
+
+      .feeds-icon-bookmark {
+        margin-left: auto;
+      }
+    }
+  }
+}

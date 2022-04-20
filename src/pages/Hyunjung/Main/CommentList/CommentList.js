@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Comment from '../Comment/HyunjungComment';
+import Comment from '../Comment/Comment';
+import './CommentList.scss';
 
 const CommentList = ({ feedsArr }) => {
   const [commentArr, setCommentArr] = useState(feedsArr.comment);
@@ -11,10 +12,6 @@ const CommentList = ({ feedsArr }) => {
 
   const onFormSubmit = e => {
     e.preventDefault();
-    // if (inputValue === '') {
-    //   return;
-    // }
-    // setCommentList(commentList => [...commentList, inputValue]);
 
     if (inputValue !== '') {
       const newUser = {
@@ -29,9 +26,11 @@ const CommentList = ({ feedsArr }) => {
 
   return (
     <div>
-      {commentArr.map(comment => (
-        <Comment comment={comment} newComment={commentArr} />
-      ))}
+      <ul className="feeds-comment">
+        {commentArr.map(comment => (
+          <Comment comment={comment} />
+        ))}
+      </ul>
 
       <div className="comment-time">55분 전</div>
       <form className="feeds-comment-input" onSubmit={onFormSubmit}>

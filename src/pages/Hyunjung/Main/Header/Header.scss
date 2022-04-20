@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid #cacaca;
+
+  .header-id {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 14px 4px 14px 16px;
+
+    .id-img {
+      width: 32px;
+      height: 32px;
+      border-radius: 25px;
+    }
+    .id {
+      margin-top: 5px;
+      padding: 0px 10px;
+    }
+  }
+  .header-dot {
+    padding: 20px 25px;
+  }
+}

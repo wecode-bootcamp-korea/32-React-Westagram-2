@@ -1,4 +1,5 @@
 import React from 'react';
+import './FeedsIcon.scss';
 
 const FeedsIcon = props => {
   return (

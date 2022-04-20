@@ -1,6 +1,7 @@
 import React from 'react';
+import './Aside.scss';
 
-const HyunJungAside = props => {
+const Aside = props => {
   return (
     <section className="right">
       <div className="main-right">
@@ -125,4 +126,4 @@ const HyunJungAside = props => {
   );
 };
 
-export default HyunJungAside;
+export default Aside;

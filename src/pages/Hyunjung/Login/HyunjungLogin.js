@@ -22,6 +22,19 @@ const HyunJungLogin = () => {
 
   const goToMain = () => {
     navigate('/hyunjung-main');
+    // 백엔드와 로그인 실습 코드
+    // fetch('http://10.58.6.73:8000/users/login', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     //json 형태로 만들어주고
+    //     // name: '경훈',
+    //     // phone_number: '010-1234-2345',
+    //     email: userId,
+    //     password: userPw, // key와 state
+    //   }),
+    // })
+    //   .then(response => response.json()) //받을때 다시 js 형식으로
+    //   .then(result => console.log('결과: ', result));
   };
   return (
     <main className="login-main">
@@ -53,6 +66,7 @@ const HyunJungLogin = () => {
               className={!btnChange ? 'active' : 'unactive'}
               onClick={goToMain}
               disabled={btnChange}
+              // type="button"
             >
               로그인
             </button>
