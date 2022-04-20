@@ -1,9 +1,8 @@
-import './LeeJiSooComment.scss';
+import { useEffect, useState } from 'react';
 import { faLaughWink } from '@fortawesome/free-regular-svg-icons';
-
-import NewComment from './LeeJiSooNewComment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useEffect, useRef, useState } from 'react';
+import NewComment from './LeeJiSooNewComment';
+import './LeeJiSooComment.scss';
 
 const LeeJiSooComment = () => {
   const [editing, setEditing] = useState('');
@@ -19,11 +18,10 @@ const LeeJiSooComment = () => {
       });
   }, []);
 
-  const commentInputRef = useRef();
   const randomId = new Date().getUTCMilliseconds();
   const count = comment.length;
   const onChange = e => {
-    setEditing(e.target.value);
+    setEditing(e.target.value.trim());
   };
 
   const addComment = text => {
@@ -37,10 +35,9 @@ const LeeJiSooComment = () => {
     setComment([...comment, newUser]);
   };
   const onEnter = e => {
-    if (e.key === 'Enter') {
-      addComment(editing);
-      setEditing('');
-    }
+    e.preventDefault();
+    addComment(editing);
+    setEditing('');
   };
   const handleShow = () => {
     if (!showComment) {
@@ -55,10 +52,8 @@ const LeeJiSooComment = () => {
   };
 
   const handleCommentBtn = () => {
-    if (editing) {
-      addComment(editing);
-      setEditing('');
-    }
+    addComment(editing);
+    setEditing('');
   };
 
   const style = { display: display };
@@ -86,15 +81,15 @@ const LeeJiSooComment = () => {
         <div>
           <FontAwesomeIcon icon={faLaughWink} />
         </div>
-        <input
-          ref={commentInputRef}
-          onChange={onChange}
-          onKeyDown={onEnter}
-          class="commentinput"
-          type="text"
-          placeholder="댓글 달기..."
-          value={editing}
-        />
+        <form className="commentForm" onSubmit={onEnter}>
+          <input
+            onChange={onChange}
+            class="commentinput"
+            type="text"
+            placeholder="댓글 달기..."
+            value={editing}
+          />
+        </form>
         <button onClick={handleCommentBtn} className="submitBtn">
           게시
         </button>

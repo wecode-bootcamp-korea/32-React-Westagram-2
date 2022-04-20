@@ -1,4 +1,5 @@
-$line-color: #afa9a9;
+@import '../Main/mixin.scss';
+@import '../Main/variable.scss';
 section {
   display: flex;
   flex-direction: column;
@@ -31,13 +32,13 @@ section {
   .showComment {
     margin-left: 12px;
     margin-top: 5px;
-    color: $line-color;
+    color: $line-color-daker;
   }
 
   .writing {
     display: flex;
     flex-direction: row;
-    border: 1px 0px 1px 0px var(--line-color) solid;
+    border: 1px 0px 1px 0px $line-color-daker solid;
     div {
       display: flex;
       justify-content: center;

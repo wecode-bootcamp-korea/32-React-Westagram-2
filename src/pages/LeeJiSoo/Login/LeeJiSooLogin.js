@@ -1,12 +1,11 @@
 import React from 'react';
-import './LeeJiSooLogin.scss';
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import './LeeJiSooLogin.scss';
 
 const LeeJiSooLogin = () => {
   const [userId, setId] = useState('');
   const [userPw, setPw] = useState('');
-  const [disabled, setDisabled] = useState(true);
   const moveMain = useNavigate();
   const userLogin = [
     {
@@ -23,28 +22,36 @@ const LeeJiSooLogin = () => {
     },
   ];
 
-  const handleSubmit = e => {
-    if (!disabled) {
-      e.preventDefault();
-      moveMain('/leejisoo-main');
-    }
-  };
-
   const handleLogin = e => {
     if (e.target.id === 'id') {
       setId(e.target.value);
     } else if (e.target.id === 'pw') {
       setPw(e.target.value);
     }
-    if (userId.includes('@') && userPw.length >= 5) {
-      setDisabled(false);
-    }
   };
-
+  /// 기록 : 에이싱크, 프로미스: 생긴건 달라도 처리는 같아용
+  const handleSubmit = e => {
+    e.preventDefault();
+    fetch('http://10.58.7.17:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: userId,
+        password: userPw,
+      }),
+    })
+      .then(res => res.json())
+      .then(result => {
+        if ((result.message = 'SUCCESS')) {
+          moveMain('/leejisoo-main');
+          // localStorage.setItem(result.token);
+        } else alert(result.message);
+      });
+  };
+  let count = 0;
   return (
-    <main>
-      <article>
-        <div className="mainDiv">
+    <main className="loginMain">
+      <section className="loginSection">
+        <article className="mainDiv">
           <div className="titleDiv">
             <h1>westagram</h1>
           </div>
@@ -52,6 +59,7 @@ const LeeJiSooLogin = () => {
             <div className="loginDiv">
               {userLogin.map(item => (
                 <input
+                  key={count++}
                   onChange={handleLogin}
                   id={item.id}
                   type={item.type}
@@ -59,22 +67,20 @@ const LeeJiSooLogin = () => {
                   value={item.value}
                 />
               ))}
-              <button type={'submit'} disabled={disabled}>
-                로그인
-              </button>
+              <button>로그인</button>
             </div>
           </form>
-          <div class="forgot">
+          <div className="forgot">
             <a>비밀번호를 잊으셨나요?</a>
           </div>
-        </div>
-        <div class="join">
+        </article>
+        <article className="join">
           <div>
             <p>계정이 없으신가요?</p>
             <Link to={'/'}>가입하기</Link>
           </div>
-        </div>
-      </article>
+        </article>
+      </section>
     </main>
   );
 };

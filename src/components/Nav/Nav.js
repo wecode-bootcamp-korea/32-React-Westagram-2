@@ -1,10 +1,27 @@
-import React, { useRef } from 'react';
-import './Nav.scss';
-import SearchItem from '../../pages/LeeJiSoo/Main/SearchItem';
+import React from 'react';
+import Search from '../../pages/LeeJiSoo/Main/SearchItem';
 import { useEffect, useState } from 'react';
-import { faEyeSlash } from '@fortawesome/free-regular-svg-icons';
+import './Nav.scss';
 
-const Nav = props => {
+const Nav = ({ userFeed }) => {
+  const [filterList, setFilterd] = useState([]);
+
+  const handleSearch = e => {
+    checkId(e.target.value);
+  };
+
+  const checkId = text => {
+    const filteredItem = userFeed.filter(item => {
+      if (text.trim() === '') {
+        return;
+      } else if (item.userName.includes(text.trim())) {
+        return item;
+      }
+    });
+
+    setFilterd(filteredItem);
+  };
+
   return (
     <nav className="nav">
       <div>
@@ -22,7 +39,7 @@ const Nav = props => {
           <div className="nav-search">
             <i className="fa-solid fa-magnifying-glass nav-search-icon"></i>
             <input
-              onKeyUp={props.search}
+              onKeyUp={handleSearch}
               className="nav-search-input"
               type="text"
               placeholder="검색"

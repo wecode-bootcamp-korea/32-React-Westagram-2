@@ -1,231 +1,228 @@
-$line-color: #dbdbdb;
-$text-color: #c0bcbc;
-$background: #fafafa;
-$black: #4c4b50;
-main {
+@import './variable.scss';
+
+.feedMain {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  min-width: 939px;
   margin-top: 60px;
-}
-
-body {
   background-color: $background;
-}
-
-.feedCon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .contentContainer {
+  .feedArticle {
     display: flex;
     flex-direction: column;
-    border: 1px solid $line-color;
-    height: fit-content;
-    border-radius: 5px;
-    margin-right: 50px;
-    margin-top: 30px;
-    .nameCon {
+    justify-content: center;
+
+    .contentContainer {
       display: flex;
-      flex-direction: row;
-      height: 60px;
-      max-width: 610px;
-      background-color: #ffffff;
-      .imgDiv {
-        align-items: center;
-        margin: 5px;
-        width: 64px;
-        height: 64px;
-        .name {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-        }
-      }
-      .nameDiv {
+      flex-direction: column;
+      border: 1px solid $line-color;
+      height: fit-content;
+      border-radius: 5px;
+      margin-right: 50px;
+      margin-top: 30px;
+      .nameCon {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 10px;
-        font-weight: 600;
-      }
-    }
-
-    .imgContainer {
-      margin-bottom: 12px;
-      .mainimg {
+        flex-direction: row;
+        height: 60px;
         max-width: 610px;
-        height: 680px;
-      }
-    }
-    .imgiconDiv {
-      .lowerIcon {
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-content: space-between;
-        text-align: center;
-        .iconDiv {
-          display: flex;
-          margin-left: 12px;
-          height: 58px;
+        background-color: #ffffff;
+        .imgDiv {
           align-items: center;
-          .iconB {
-            margin: 5px;
-            font-size: 23px;
-            margin-right: 10px;
-            color: $black;
-          }
-        }
-        .fa-bookmark {
           margin: 5px;
-          font-size: 23px;
-          margin-right: 10px;
-        }
-      }
-
-      .like {
-        display: flex;
-        flex-direction: row;
-        margin-left: 12px;
-      }
-      .writerComment {
-        margin-top: 5px;
-        margin-left: 12px;
-      }
-    }
-
-    .commentSection {
-      .comment {
-        margin-left: 2px;
-
-        ul > li {
-          display: flex;
-          flex-direction: row;
-        }
-        .indiComment {
-          margin: 4px 0px 4px 0px;
-          .commentCon {
-            display: flex;
-            flex-direction: row;
-            .commentName {
-              margin-right: 3px;
-            }
-          }
-          .commentBtnContainer {
-            display: flex;
-            justify-content: space-evenly;
-            background-color: transparent;
-          }
-          .commentBtn:hover {
-            border: 1px solid $black;
+          width: 64px;
+          height: 64px;
+          .name {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
           }
         }
-      }
-      .writing {
-        display: flex;
-        flex-direction: row;
-        border: 1px 0px 1px 0px $line-color solid;
-        div {
+        .nameDiv {
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 55px;
+          margin-bottom: 10px;
+          font-weight: 600;
         }
-        input {
-          border-radius: 0px;
-          width: 100%;
-          height: 43px;
-          border: none;
-          background-color: transparent;
+      }
+
+      .imgContainer {
+        margin-bottom: 12px;
+        .mainimg {
+          max-width: 610px;
+          height: 680px;
+        }
+      }
+      .imgiconDiv {
+        .lowerIcon {
+          display: flex;
+          flex-direction: row;
+          align-content: center;
+          justify-content: space-between;
+          text-align: center;
+          .iconDiv {
+            display: flex;
+            margin-left: 12px;
+            height: 58px;
+            align-items: center;
+            .iconB {
+              margin: 5px;
+              font-size: 23px;
+              margin-right: 10px;
+              color: $black;
+            }
+          }
+          .fa-bookmark {
+            margin: 5px;
+            font-size: 23px;
+            margin-right: 10px;
+          }
+        }
+
+        .like {
+          display: flex;
+          flex-direction: row;
+          margin-left: 12px;
+        }
+        .writerComment {
+          margin-top: 5px;
+          margin-left: 12px;
+        }
+      }
+
+      .commentSection {
+        .comment {
+          margin-left: 2px;
+
+          ul > li {
+            display: flex;
+            flex-direction: row;
+          }
+          .indiComment {
+            margin: 4px 0px 4px 0px;
+            .commentCon {
+              display: flex;
+              flex-direction: row;
+              .commentName {
+                margin-right: 3px;
+              }
+            }
+            .commentBtnContainer {
+              display: flex;
+              justify-content: space-evenly;
+              background-color: transparent;
+            }
+            .commentBtn:hover {
+              border: 1px solid $black;
+            }
+          }
+        }
+        .writing {
+          display: flex;
+          flex-direction: row;
+          border: 1px 0px 1px 0px $line-color solid;
+          div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 55px;
+          }
+          form {
+            border-radius: 0px;
+            width: 100%;
+            height: 43px;
+
+            background-color: transparent;
+            input {
+              border: none;
+            }
+          }
         }
       }
     }
   }
-}
 
-.sideContainer {
-  margin-left: 30px;
-  width: 315px;
-  max-height: 1023px;
-  max-height: 940px;
-  background-color: #fafafa;
-  .profileImg {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    padding: 0.5px;
-    border: 1.2px solid red;
-  }
-  .profile {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 96px;
-    margin: 5px 0px 5px 0px;
-    .info {
-      margin-left: 10px;
-      font-size: 13px;
+  .sideContainer {
+    margin-left: 30px;
+    width: 315px;
+    max-height: 1023px;
+    max-height: 940px;
+    background-color: #fafafa;
+    .profileImg {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      padding: 0.5px;
+      border: 1.2px solid red;
+    }
+    .profile {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
-
-      p {
-        margin: 5px;
-      }
-      p:first-child {
-        font-weight: bolder;
-      }
-      a {
-        color: #0296f6;
-        font-weight: bold;
-      }
-    }
-  }
-  .story {
-    .titleDiv {
-      display: flex;
       align-items: center;
-      justify-content: space-between;
-      width: 315px;
-      margin-bottom: 15px;
-      color: $text-color;
-      font-size: 13px;
-      p:last-child {
-        width: 30%;
-        color: $black;
-        font-weight: 600;
-      }
-    }
-
-    .recommand {
-      .profile {
-        height: fit-content;
-      }
-      .imgDiv {
-        height: 38px;
-        margin-right: 10px;
+      height: 96px;
+      margin: 5px 0px 5px 0px;
+      .info {
+        margin-left: 10px;
+        font-size: 13px;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: $black;
-        border-radius: 50%;
-      }
-      img {
-        width: 32px;
-        height: 32px;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+          margin: 5px;
+        }
+        p:first-child {
+          font-weight: bolder;
+        }
+        a {
+          color: #0296f6;
+          font-weight: bold;
+        }
       }
     }
-  }
-  .sideInfo {
-    margin-bottom: 350px;
-    color: $line-color;
-    div {
-      width: 315px;
-      margin-top: 20px;
-      font-size: 14px;
-      line-height: 1.3rem;
+    .story {
+      .titleDiv {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 315px;
+        margin-bottom: 15px;
+        color: $text-color;
+        font-size: 13px;
+        p:last-child {
+          width: 30%;
+          color: $black;
+          font-weight: 600;
+        }
+      }
+
+      .recommand {
+        .profile {
+          height: fit-content;
+        }
+        .imgDiv {
+          height: 38px;
+          margin-right: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $black;
+          border-radius: 50%;
+        }
+        img {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+    .sideInfo {
+      margin-bottom: 350px;
+      color: $line-color;
+      div {
+        width: 315px;
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 1.3rem;
+      }
     }
   }
 }
