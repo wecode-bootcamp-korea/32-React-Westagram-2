@@ -51,6 +51,7 @@ const Comment = ({ isLike }) => {
   };
 
   const handleDelete = id => {
+    console.log(id);
     setList(prev => prev.filter(list => list.id !== id));
   };
 
@@ -71,8 +72,7 @@ const Comment = ({ isLike }) => {
   }, []);
 
   const isCheckSpace = str => {
-    const regExp = /[^\s|^$]/g;
-
+    const regExp = /[^\s]/g;
     if (str === undefined) {
       return false;
     } else if (regExp.test(str)) {
