@@ -18,8 +18,12 @@ const LeeJiSooComment = () => {
       });
   }, []);
 
+  const style = { display: display };
+
   const randomId = new Date().getUTCMilliseconds();
+
   const count = comment.length;
+
   const onChange = e => {
     setEditing(e.target.value.trim());
   };
@@ -34,11 +38,13 @@ const LeeJiSooComment = () => {
 
     setComment([...comment, newUser]);
   };
+
   const onEnter = e => {
     e.preventDefault();
     addComment(editing);
     setEditing('');
   };
+
   const handleShow = () => {
     if (!showComment) {
       setDisplayt('none');
@@ -56,7 +62,6 @@ const LeeJiSooComment = () => {
     setEditing('');
   };
 
-  const style = { display: display };
   return (
     <section className="commentSection">
       <div className="showComment" onClick={handleShow} style={style}>

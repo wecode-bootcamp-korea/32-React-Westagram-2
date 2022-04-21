@@ -1,4 +1,5 @@
 import '../LeeJiSooMain.scss';
+import './LeeJiSooAside.scss';
 import LeeJiSooCard from './LeeJiSooCard';
 import LeeJiSooRecommend from './LeeJiSooRecommend';
 const LeeJiSoAside = () => {

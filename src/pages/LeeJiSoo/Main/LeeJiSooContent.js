@@ -1,8 +1,8 @@
-import './LeeJiSooMain.scss';
 import LeeJiSooMainTop from './LeeJiSooMainTop';
 import LeeJiSooMainMiddle from './LeeJiSooMainMiddle';
 import LeeJiSooMainBottom from './LeeJiSooMainBottom';
 import LeeJiSooComment from './LeeJiSooComment';
+import './LeeJiSooMain.scss';
 
 const LeeJiSooContent = ({ feed }) => {
   return (

@@ -1,5 +1,5 @@
-import LeeJiSooCard from './LeeJiSooCard';
 import { useEffect, useState } from 'react';
+import LeeJiSooCard from './LeeJiSooCard';
 
 const LeeJiSooRecommend = props => {
   const [feed, setFeed] = useState([]);
