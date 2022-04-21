@@ -1,0 +1,83 @@
+@import 'https://fonts.googleapis.com/css2?family=Lobster&display=swap';
+@import '../Main/mixin.scss';
+@import '../Main/variable.scss';
+
+.loginMain {
+  @include centerRow;
+  background-color: $background;
+
+  .loginSection {
+    @include center;
+    height: 100vh;
+    background-color: $background;
+  }
+
+  .mainDiv {
+    @include center;
+    position: relative;
+    background-color: rgba(var(--d87, 255, 255, 255), 1);
+    border: 0.5px solid $line-color;
+    margin-bottom: 15px;
+
+    .titleDiv {
+      text-align: center;
+      height: 119px;
+    }
+
+    h1 {
+      margin: 20px;
+      text-align: center;
+      font-size: 40px;
+      font-family: 'Lobster', cursive;
+    }
+  }
+
+  .formDiv {
+    width: 350px;
+    height: 337px;
+    text-align: center;
+
+    input {
+      margin: 5px;
+      height: 35px;
+      width: 70%;
+      border-radius: 0px;
+    }
+
+    button {
+      margin-top: 10px;
+      height: 35px;
+      width: 60%;
+      border: none;
+      border-radius: 5px;
+      background-color: #0296f6;
+      color: white;
+    }
+  }
+
+  .forgot {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .join {
+    border: 0.5px solid $line-color;
+
+    div {
+      @include centerRow;
+      margin-top: 15px;
+      width: 350px;
+      height: 65px;
+      background-color: #ffff;
+    }
+    p {
+      margin-right: 5px;
+    }
+    a {
+      text-decoration: none;
+      color: #0296f6;
+    }
+  }
+}
