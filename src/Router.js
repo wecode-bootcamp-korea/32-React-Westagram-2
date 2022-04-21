@@ -9,16 +9,16 @@ import LeeSooLogin from './pages/LeeSoo/Login/LeeSooLogin';
 import LeeSooMain from './pages/LeeSoo/Main/LeeSooMain';
 
 // 덕우's 컴포넌트
-import DeokWooLogin from './pages/DeokWoo/Login/DeokWooLogin';
-import DeokWooMain from './pages/DeokWoo/Main/DeokWooMain';
+import DeokWooLogin from './pages/Deokwoo/Login/DeokwooLogin';
+import DeokWooMain from './pages/Deokwoo/Main/DeokwooMain';
 
 // 대영's 컴포넌트
-import DaeYoungLogin from './pages/DaeYoung/Login/DaeYoungLogin';
-import DaeYoungMain from './pages/DaeYoung/Main/DaeYoungMain';
+import DaeYoungLogin from './pages/Daeyoung/Login/DaeyoungLogin';
+import DaeYoungMain from './pages/Daeyoung/Main/DaeyoungMain';
 
 // 현정's 컴포넌트
-import HyunJungLogin from './pages/HyunJung/Login/HyunJungLogin';
-import HyunJungMain from './pages/HyunJung/Main/HyunJungMain';
+import HyunJungLogin from './pages/Hyunjung/Login/HyunjungLogin';
+import HyunJungMain from './pages/Hyunjung/Main/HyunjungMain';
 
 const Router = props => {
   return (
