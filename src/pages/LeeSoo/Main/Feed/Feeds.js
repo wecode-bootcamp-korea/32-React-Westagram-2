@@ -6,6 +6,14 @@ function Feeds(props) {
   const [counter, setCounter] = useState(4);
   let [commentList, setCommentList] = useState([]);
 
+  const removeComment = id => {
+    setCommentList(
+      commentList.filter(comment => {
+        return comment.id !== id;
+      })
+    );
+  };
+
   useEffect(() => {
     fetch('http://localhost:3000/data/commentData.json', {
       method: 'GET', // GET method는 기본값이라서 생략이 가능합니다.
@@ -22,11 +30,10 @@ function Feeds(props) {
     if (e.key === 'Enter') {
       // eslint-disable-next-line no-lone-blocks
       {
-        setCounter(counter => counter + 1);
         setCommentList([
           ...commentList,
           {
-            id: counter,
+            id: Date.now(),
             userName: 'Sooboi_97',
             content: inputValues,
             isLiked: false,
@@ -88,7 +95,7 @@ function Feeds(props) {
         </div>
         <div className="Comments-show">
           {/* 여기에 댓글 기능 구현하기 */}
-          <Comments list={commentList} />
+          <Comments list={commentList} removeComment={removeComment} />
         </div>
         {/* 여기에 댓글 입력창 구현하기 */}
         <div className="Comments-write" onKeyDown={EnterCatch}>

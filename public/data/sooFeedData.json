@@ -1,20 +1,20 @@
 [
   {
-    "num": 1,
+    "id": 1,
     "profile": "/images/LeeSoo/profile1.jpg",
     "title": "myluvJunbum",
     "title2": "/images/LeeSoo/feed1.jpg",
     "isLiked": false
   },
   {
-    "num": 2,
+    "id": 2,
     "profile": "/images/LeeSoo/profile2.jpg",
     "title": "king_hyunsoo",
     "title2": "/images/LeeSoo/feed2.jpg",
     "isLiked": false
   },
   {
-    "num": 3,
+    "id": 3,
     "profile": "/images/LeeSoo/profile3.jpg",
     "title": "backEndmatchin",
     "title2": "/images/LeeSoo/feed3.jpg",

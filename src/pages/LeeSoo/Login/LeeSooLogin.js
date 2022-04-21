@@ -21,7 +21,7 @@ const LeeSooLogin = props => {
 
   const navigate = useNavigate();
   // const goMain = e => {
-  e.preventDefault();
+  // e.preventDefault();
 
   //   console.log(LoginPw);
   //   fetch('http://10.58.0.177:8000/users/signin', {
@@ -58,9 +58,7 @@ const LeeSooLogin = props => {
             }}
           />
           <br />
-          {LoginId}
-          <br />
-          <br />
+
           <input
             type="password"
             placeholder="비밀번호"
@@ -68,9 +66,7 @@ const LeeSooLogin = props => {
               LoginPwChange(e.target.value);
             }}
           />
-          <br />
-          {LoginPw}
-          <br />
+
           <br />
           <button
             className={BtnLogin ? 'button-active' : ''}
