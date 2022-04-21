@@ -1,9 +1,11 @@
 @import '../Main/mixin.scss';
 @import '../Main/variable.scss';
-section {
+
+.commentSection {
   display: flex;
   flex-direction: column;
   width: 100%;
+
   .indiComment {
     display: flex;
     flex-direction: row;
@@ -13,17 +15,20 @@ section {
       display: flex;
       width: 100%;
       justify-content: space-between;
+
       .commentCon {
         display: flex;
         flex-direction: row;
         align-items: center;
         margin-left: 13px;
       }
+
       .commentBtnContainer {
         display: flex;
         background-color: transparent;
         margin-right: 10px;
       }
+
       button {
         width: 10%;
       }
@@ -34,17 +39,22 @@ section {
     margin-top: 5px;
     color: $line-color-daker;
   }
+  .hidden {
+    display: none;
+  }
 
   .writing {
     display: flex;
     flex-direction: row;
     border: 1px 0px 1px 0px $line-color-daker solid;
+
     div {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 55px;
     }
+
     input {
       border-radius: 0px;
       width: 100%;

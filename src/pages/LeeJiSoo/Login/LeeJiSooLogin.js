@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './LeeJiSooLogin.scss';
 
@@ -29,7 +28,7 @@ const LeeJiSooLogin = () => {
       setPw(e.target.value);
     }
   };
-  /// 기록 : 에이싱크, 프로미스: 생긴건 달라도 처리는 같아용
+
   const handleSubmit = e => {
     e.preventDefault();
     fetch('http://10.58.7.17:8000/users/signup', {
@@ -47,7 +46,7 @@ const LeeJiSooLogin = () => {
         } else alert(result.message);
       });
   };
-  let count = 0;
+
   return (
     <main className="loginMain">
       <section className="loginSection">
@@ -57,16 +56,19 @@ const LeeJiSooLogin = () => {
           </div>
           <form className="formDiv" onSubmit={handleSubmit}>
             <div className="loginDiv">
-              {userLogin.map(item => (
-                <input
-                  key={count++}
-                  onChange={handleLogin}
-                  id={item.id}
-                  type={item.type}
-                  placeholder={item.placeholder}
-                  value={item.value}
-                />
-              ))}
+              {userLogin.map(item => {
+                const { id, type, placeholder, value } = item;
+                return (
+                  <input
+                    key={id}
+                    onChange={handleLogin}
+                    id={id}
+                    type={type}
+                    placeholder={placeholder}
+                    value={value}
+                  />
+                );
+              })}
               <button>로그인</button>
             </div>
           </form>
@@ -77,7 +79,7 @@ const LeeJiSooLogin = () => {
         <article className="join">
           <div>
             <p>계정이 없으신가요?</p>
-            <Link to={'/'}>가입하기</Link>
+            <Link to="/">가입하기</Link>
           </div>
         </article>
       </section>

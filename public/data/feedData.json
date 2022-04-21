@@ -4,6 +4,7 @@
     "src": "/images/LeeJiSoo/room.png",
     "text": "방정리 끝!",
     "recommand": "mushroom님외 2명이 팔로우..",
+    "time": 5,
     "follow": true
   },
   {
@@ -11,6 +12,7 @@
     "src": "/images/LeeJiSoo/mushroom.png",
     "text": "새로운 조명등장!",
     "recommand": "mushroom님외 2명이 팔로우..",
+    "time": 20,
     "follow": true
   },
   {
@@ -18,6 +20,7 @@
     "src": "/images/LeeJiSoo/covid.PNG",
     "text": "카페투어!",
     "recommand": "mushroom님외 2명이 팔로우..",
+    "time": 30,
     "follow": true
   },
   {
@@ -25,6 +28,7 @@
     "src": "/images/LeeJiSoo/dpg.PNG",
     "text": "해가 좋음!",
     "recommand": "mushroom님외 2명이 팔로우..",
+    "time": 30,
     "follow": true
   }
 ]

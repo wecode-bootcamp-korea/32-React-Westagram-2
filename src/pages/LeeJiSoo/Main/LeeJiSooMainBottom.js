@@ -5,6 +5,7 @@ import {
   faBookmark,
 } from '@fortawesome/free-regular-svg-icons';
 import { faShareNodes } from '@fortawesome/free-solid-svg-icons';
+
 const LeeJiSooMainBottom = props => {
   const icon = [faHeart, faComment, faShareNodes];
   return (

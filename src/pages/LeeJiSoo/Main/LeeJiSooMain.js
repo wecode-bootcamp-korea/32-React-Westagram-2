@@ -22,7 +22,7 @@ const LeeJiSooMain = () => {
           <LeeJiSooContent feed={feed} />
         </article>
         <article className="asideArticle">
-          <LeeJiSoAside />
+          <LeeJiSoAside feed={feed} />
         </article>
       </main>
     </>

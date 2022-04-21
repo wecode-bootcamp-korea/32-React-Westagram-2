@@ -5,21 +5,25 @@
 .loginMain {
   @include centerRow;
   background-color: $background;
+
   .loginSection {
     @include center;
     height: 100vh;
     background-color: $background;
   }
+
   .mainDiv {
     @include center;
     position: relative;
     background-color: rgba(var(--d87, 255, 255, 255), 1);
     border: 0.5px solid $line-color;
     margin-bottom: 15px;
+
     .titleDiv {
       text-align: center;
       height: 119px;
     }
+
     h1 {
       margin: 20px;
       text-align: center;
@@ -32,12 +36,14 @@
     width: 350px;
     height: 337px;
     text-align: center;
+
     input {
       margin: 5px;
       height: 35px;
       width: 70%;
       border-radius: 0px;
     }
+
     button {
       margin-top: 10px;
       height: 35px;

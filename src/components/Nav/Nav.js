@@ -4,22 +4,19 @@ import { useEffect, useState } from 'react';
 import './Nav.scss';
 
 const Nav = ({ userFeed }) => {
-  const [filterList, setFilterd] = useState([]);
+  const [filterList, setFilterList] = useState([]);
 
   const handleSearch = e => {
     checkId(e.target.value);
   };
 
   const checkId = text => {
+    if (text.trim() === '') return;
     const filteredItem = userFeed.filter(item => {
-      if (text.trim() === '') {
-        return;
-      } else if (item.userName.includes(text.trim())) {
-        return item;
-      }
+      item.userName.includes(text.trim());
     });
 
-    setFilterd(filteredItem);
+    setFilterList(filteredItem);
   };
 
   return (

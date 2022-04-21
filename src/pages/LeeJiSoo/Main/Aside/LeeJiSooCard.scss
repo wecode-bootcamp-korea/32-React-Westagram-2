@@ -1,0 +1,28 @@
+.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 96px;
+  margin: 5px 0px 5px 0px;
+
+  .info {
+    margin-left: 10px;
+    font-size: 13px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    p {
+      margin: 5px;
+    }
+
+    p:first-child {
+      font-weight: bolder;
+    }
+
+    a {
+      color: #0296f6;
+      font-weight: bold;
+    }
+  }
+}

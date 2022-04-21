@@ -1,17 +1,17 @@
-import { faTrashCan, faHeart } from '@fortawesome/free-regular-svg-icons';
 import { useState } from 'react';
+import { faTrashCan, faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faHeartPulse } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const NewComment = ({ item, delteComment }) => {
-  const [isitlike, setLike] = useState(item.isLiked);
+  const [isitlike, setisitLike] = useState(item.isLiked);
 
-  const clickLike = e => {
+  const clickLike = () => {
     if (!isitlike) {
-      setLike(true);
-    } else setLike(false);
+      setisitLike(true);
+    } else setisitLike(false);
   };
 
-  const deleteItemBtn = e => {
+  const deleteItemBtn = () => {
     delteComment(item);
   };
 
@@ -25,11 +25,7 @@ const NewComment = ({ item, delteComment }) => {
         </div>
         <div className="commentBtnContainer">
           <button onClick={clickLike} className="commentBtn" id="likebtn">
-            {isitlike ? (
-              <FontAwesomeIcon icon={faHeartPulse} />
-            ) : (
-              <FontAwesomeIcon icon={faHeart} />
-            )}
+            <FontAwesomeIcon icon={isitlike ? faHeartPulse : faHeart} />
           </button>
           <button className="commentBtn" id="delete" onClick={deleteItemBtn}>
             <FontAwesomeIcon icon={faTrashCan} />

@@ -5,27 +5,25 @@ import NewComment from './LeeJiSooNewComment';
 import './LeeJiSooComment.scss';
 
 const LeeJiSooComment = () => {
-  const [editing, setEditing] = useState('');
-  const [comment, setComment] = useState([]);
+  const [comment, setComment] = useState('');
+  const [commentList, setCommentList] = useState([]);
   const [showComment, setShowComment] = useState(false);
-  const [display, setDisplayt] = useState('');
+  const [hidden, setHidden] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/commentData.json', { method: 'GET' })
+    fetch('/data/commentData.json', { method: 'GET' })
       .then(res => res.json())
       .then(data => {
-        setComment(data);
+        setCommentList(data);
       });
   }, []);
 
-  const style = { display: display };
-
   const randomId = new Date().getUTCMilliseconds();
 
-  const count = comment.length;
+  const count = commentList.length;
 
   const onChange = e => {
-    setEditing(e.target.value.trim());
+    setComment(e.target.value.trim());
   };
 
   const addComment = text => {
@@ -36,41 +34,41 @@ const LeeJiSooComment = () => {
       isLike: false,
     };
 
-    setComment([...comment, newUser]);
+    setCommentList([...commentList, newUser]);
   };
 
   const onEnter = e => {
     e.preventDefault();
-    addComment(editing);
-    setEditing('');
+    addComment(comment);
+    setComment('');
   };
 
   const handleShow = () => {
     if (!showComment) {
-      setDisplayt('none');
+      setHidden('none');
       setShowComment(true);
     } else setShowComment(false);
   };
 
   const handleDelete = item => {
-    const filterdItem = comment.filter(items => items.id !== item.id);
-    setComment(filterdItem);
+    const filterdItem = commentList.filter(items => items.id !== item.id);
+    setCommentList(filterdItem);
   };
 
   const handleCommentBtn = () => {
-    addComment(editing);
-    setEditing('');
+    addComment(comment);
+    setComment('');
   };
 
   return (
     <section className="commentSection">
-      <div className="showComment" onClick={handleShow} style={style}>
+      <div className={('showComment', hidden && 'hidden')} onClick={handleShow}>
         댓글 {count}개보기...
       </div>
-      {showComment ? (
+      {showComment && (
         <div className="comment">
           <ul>
-            {comment.map(item => (
+            {commentList.map(item => (
               <NewComment
                 delteComment={handleDelete}
                 item={item}
@@ -79,8 +77,6 @@ const LeeJiSooComment = () => {
             ))}
           </ul>
         </div>
-      ) : (
-        ''
       )}
       <div class="writing">
         <div>
@@ -92,7 +88,7 @@ const LeeJiSooComment = () => {
             class="commentinput"
             type="text"
             placeholder="댓글 달기..."
-            value={editing}
+            value={comment}
           />
         </form>
         <button onClick={handleCommentBtn} className="submitBtn">
