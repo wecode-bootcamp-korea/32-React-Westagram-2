@@ -1,20 +1,20 @@
 [
   {
     "id": 1,
-    "userName": "wecode",
-    "content": "Welcome to world best coding bootcamp!",
+    "userName": "king_hyunsoo",
+    "content": "흥미로운 스타일기법이네요🐱‍👤",
     "isLiked": true
   },
   {
     "id": 2,
-    "userName": "joonsikyang",
-    "content": "Hi there.",
+    "userName": "lighting._.dohyeon",
+    "content": "할 수 있어요 !!",
     "isLiked": false
   },
   {
     "id": 3,
-    "userName": "jayPark",
-    "content": "Hey.",
+    "userName": "HayoungLee",
+    "content": "hey 😁😁",
     "isLiked": false
   }
 ]

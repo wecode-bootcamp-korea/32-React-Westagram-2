@@ -20,7 +20,26 @@ const LeeSooLogin = props => {
   }
 
   const navigate = useNavigate();
-  const goMain = () => {
+  // const goMain = e => {
+  e.preventDefault();
+
+  //   console.log(LoginPw);
+  //   fetch('http://10.58.0.177:8000/users/signin', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       email: LoginId,
+  //       password: LoginPw,
+  //       name: '영빈오빠',
+  //       phone_number: '010-1234-5678',
+  //     }),
+  //   })
+  //     .then(response => response.json())
+  //     .then(result => {
+  //       console.log('결과: ', result);
+  //       navigate('/LeeSoo-Main');
+  //     });
+  // };
+  const goMain = e => {
     navigate('/LeeSoo-Main');
   };
 

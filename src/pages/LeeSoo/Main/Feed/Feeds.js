@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './LeeSooMain.scss';
-import Comments from './Comments';
+import '../LeeSooMain.scss';
+import Comments from '../Comment/Comments.js';
 
 function Feeds(props) {
   const [counter, setCounter] = useState(4);
@@ -20,6 +20,7 @@ function Feeds(props) {
 
   let EnterCatch = e => {
     if (e.key === 'Enter') {
+      // eslint-disable-next-line no-lone-blocks
       {
         setCounter(counter => counter + 1);
         setCommentList([
@@ -35,16 +36,11 @@ function Feeds(props) {
       }
     }
   };
-  console.log(props);
   return (
     <div className="contents">
       <article>
         <div className="article-top">
-          <img
-            alt="유저 이미지"
-            src="/images/LeeSoo/userImg.jpg"
-            className="userImg"
-          />
+          <img alt="유저 이미지" src={props.profile} className="userImg" />
           <p>{props.title}</p>
           <span className="dotMore">
             <a href="#">
@@ -109,6 +105,7 @@ function Feeds(props) {
           <button
             className="input-bt"
             onClick={() => {
+              // eslint-disable-next-line no-lone-blocks
               {
                 setCounter(counter => counter + 1);
                 setCommentList([

@@ -30,7 +30,6 @@ body {
           max-width: 630px;
           width: 100%;
           height: auto;
-          margin-bottom: 50px;
           border: 1px solid rgba(45, 42, 42, 0.3);
           background-color: white;
 
@@ -126,7 +125,7 @@ body {
 
         .Comments-show {
           margin-top: 10px;
-          height: 90px;
+          height: 120px;
           overflow-y: scroll;
 
           .Comments-list {
