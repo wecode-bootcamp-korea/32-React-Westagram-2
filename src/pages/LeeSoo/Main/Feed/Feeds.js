@@ -4,7 +4,8 @@ import Comments from '../Comment/Comments.js';
 
 function Feeds(props) {
   const [counter, setCounter] = useState(4);
-  let [commentList, setCommentList] = useState([]);
+  const [commentList, setCommentList] = useState([]);
+  const [inputValues, inputValuesChange] = useState('');
 
   const removeComment = id => {
     setCommentList(
@@ -14,19 +15,7 @@ function Feeds(props) {
     );
   };
 
-  useEffect(() => {
-    fetch('http://localhost:3000/data/commentData.json', {
-      method: 'GET', // GET method는 기본값이라서 생략이 가능합니다.
-    }) // 예시코드에서는 이해를 돕기 위해 명시적으로 기입해뒀습니다.
-      .then(res => res.json())
-      .then(data => {
-        setCommentList(data);
-      });
-  }, []);
-
-  let [inputValues, inputValuesChange] = useState('');
-
-  let EnterCatch = e => {
+  const EnterCatch = e => {
     if (e.key === 'Enter') {
       // eslint-disable-next-line no-lone-blocks
       {
@@ -43,6 +32,24 @@ function Feeds(props) {
       }
     }
   };
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET', // GET method는 기본값이라서 생략이 가능합니다.
+    }) // 예시코드에서는 이해를 돕기 위해 명시적으로 기입해뒀습니다.
+      .then(res => res.json())
+      .then(data => {
+        setCommentList(data);
+      });
+  }, []);
+
+  const clickHeart = id => {
+    const commentCopy = [...commentList];
+    const clickItem = commentCopy.find(comment => comment.id === id);
+    clickItem.isLiked = !clickItem.isLiked;
+    setCommentList(commentCopy);
+  };
+
   return (
     <div className="contents">
       <article>
@@ -95,7 +102,11 @@ function Feeds(props) {
         </div>
         <div className="Comments-show">
           {/* 여기에 댓글 기능 구현하기 */}
-          <Comments list={commentList} removeComment={removeComment} />
+          <Comments
+            list={commentList}
+            clickHeart={clickHeart}
+            removeComment={removeComment}
+          />
         </div>
         {/* 여기에 댓글 입력창 구현하기 */}
         <div className="Comments-write" onKeyDown={EnterCatch}>

@@ -19,14 +19,14 @@ const LeeSooMain = props => {
       <Nav />
       <main>
         <div className="Feed-list">
-          {feedData.map(data => {
+          {feedData.map(({ id, title, isLiked, title2, profile }) => {
             return (
               <Feeds
-                key={data.id}
-                title={data.title}
-                isLiked={data.isLiked}
-                source={data.title2}
-                profile={data.profile}
+                key={id}
+                title={title}
+                isLiked={isLiked}
+                source={title2}
+                profile={profile}
               />
             );
           })}

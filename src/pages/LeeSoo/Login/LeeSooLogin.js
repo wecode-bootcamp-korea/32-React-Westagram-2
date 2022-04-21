@@ -1,29 +1,24 @@
 /*eslint-disable*/
-
-import React from 'react';
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './LeeSooLogin.scss';
 
 const LeeSooLogin = props => {
-  let [LoginId, LoginIdChange] = useState('');
-  let [LoginPw, LoginPwChange] = useState('');
-  let [BtnColor, BtnColorChange] = useState('#41699d');
+  // state 선언
+  const [LoginId, LoginIdChange] = useState('');
+  const [LoginPw, LoginPwChange] = useState('');
 
-  let BtnLogin = (LoginId.includes('@') && LoginPw.length >= 5) === true;
-
-  function LoginCheck(id, pw) {
-    if (id.includes('@') && pw.length >= 5) {
-      return false;
-    }
-    return true;
-  }
-
+  //  변수 선언
+  const isValid = (LoginId.includes('@') && LoginPw.length >= 5) === true;
   const navigate = useNavigate();
+
+  const goMain = e => {
+    navigate('/LeeSoo-Main');
+  };
+
   // const goMain = e => {
   // e.preventDefault();
 
-  //   console.log(LoginPw);
   //   fetch('http://10.58.0.177:8000/users/signin', {
   //     method: 'POST',
   //     body: JSON.stringify({
@@ -39,16 +34,13 @@ const LeeSooLogin = props => {
   //       navigate('/LeeSoo-Main');
   //     });
   // };
-  const goMain = e => {
-    navigate('/LeeSoo-Main');
-  };
 
   return (
-    <div className="box">
+    <div className="loginWrapper">
       <header className="logo">
         <p>Westagram</p>
       </header>
-      <div className="insert-area">
+      <div className="insertArea">
         <form action="">
           <input
             type="text"
@@ -69,10 +61,10 @@ const LeeSooLogin = props => {
 
           <br />
           <button
-            className={BtnLogin ? 'button-active' : ''}
+            className={isValid ? 'button-active' : ''}
             type="submit"
             onClick={goMain}
-            disabled={LoginCheck(LoginId, LoginPw)}
+            disabled={!isValid}
           >
             로그인
           </button>
